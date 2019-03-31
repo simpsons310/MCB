@@ -1,0 +1,30 @@
+
+def compute(a,b,opr):
+	if (opr == "add"):
+		return a+b
+	if (opr == "min"):
+		return a-b
+	if (opr == "mul"):
+		return a*b
+	if (opr == "div"):
+		return a/b
+	if (opr == "mod"):
+		return a%b
+
+def sortA(a,c):
+	temp = 0
+	length = sizeof(a)/sizeof(int)
+	for i in range(0,length-2):
+		for j in range(i+1,length-1):
+			if (c == "asc"):
+				if(a[i] > a[j]):
+					a[i] = temp;
+					a[i] = a[j];
+					a[j] = temp;
+			elif (c == "desc"):
+				if(a[i] < a[j]):
+					a[i] = temp;
+					a[i] = a[j];
+					a[j] = temp;
+
+printf compute(5,6,"add")

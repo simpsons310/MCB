@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+   	 	<title> WSN2019 </title>
+   	 	<link rel="WSN icon" href="image/WSN.ico">
+   	 	<meta http-equiv="content-type" content="tex/html;charset = UTF-8">
+   	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	  	<link rel="stylesheet" href="style.css">
+		<script>
+			function sendData(led) {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+    				if (this.readyState == 4 && this.status == 200) {
+      					document.getElementById("LEDState").innerHTML =
+      					this.responseText;
+    				}
+  				};
+  			xhttp.open("GET", "setLED?LEDstate="+led, true);
+  			xhttp.send();
+			}
+
+		setInterval(function() {
+  		// Call a function repetatively with 2 Second interval
+  			getData();
+		}, 2000); //2000mSeconds update rate
+
+		function getData() {
+  			var xhttp = new XMLHttpRequest();
+  			xhttp.onreadystatechange = function() {
+    			if (this.readyState == 4 && this.status == 200) {
+      				document.getElementById("ADCValue").innerHTML =
+      				this.responseText;
+    			}
+  			};
+  			xhttp.open("GET", "readADC", true);
+  			xhttp.send();
+		}
+
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Simple Line Chart"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",       
+		dataPoints: [
+			{ y: 450 },
+			{ y: 414},
+			{ y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+			{ y: 460 },
+			{ y: 450 },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 480 },
+			{ y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 510 }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+	</head>
+	<body>
+		<div id="taskbar">
+			<h1> User information here </h1>
+		</div>
+		<div id="display">
+			<div class="menu">
+				<div id = "menu_text">						
+					<strong> MENU  </strong>
+ 				</div>
+				<div id = "menu_list">
+					<ul class="list">
+						<li> List 1 </li>
+						<li> List 2 </li>
+						<li> List 3 </li>
+					</ul>
+				</div>
+				<div id = "description">
+					<p> Descirption </p>
+				</div>
+			</div>
+			<div class="data">
+				<div id="DHT_11">
+					<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+					<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>					
+				</div>
+				<div id="led_control">
+					<button type="button" onclick="sendData(1)">LED ON</button>
+					<button type="button" onclick="sendData(0)">LED OFF</button><BR>
+				</div>
+				<div id="ADC_value">
+					ADC Value is : <span id="ADCValue">0</span><br>
+  					LED State is : <span id="LEDState">NA</span>
+			</div>
+		</div>
+	</body>
+</html>
+
+

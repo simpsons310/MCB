@@ -1,0 +1,80 @@
+body{
+	position: relative;
+	padding: 0px;
+    margin: 0px;
+    background-color: white;
+    font-size: 18px;    
+}
+
+h1{
+	background-color: none;
+	margin: center;
+	font-size: 30px;	
+}
+
+
+#taskbar{
+	height: 60px;
+	width: 100%;
+	background-color: #06629F;
+	text-align: center;
+	border: 1px solid black;
+}
+
+#display{
+	width: 100%;
+	height: 100%;
+}
+
+.menu{
+	width: 12%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: #06629F;
+	border: 1px solid black;
+	float: left;
+} 
+
+
+#menu_text{
+	vertical-align: middle;
+	line-height: 50px;
+	margin: auto;
+	height: 50px;
+	text-align: center;
+	font-size: 25px; 
+	border: 1px solid black;
+}	
+
+ul.list{
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+}
+
+ul.list li{
+	vertical-align: middle;
+	line-height: 50px;
+	height: 50px;
+	padding: 0px;
+	margin: auto;
+	text-align: center;
+	font-size: 25px;
+	border: 1px solid black;
+}
+
+#description{
+	height: 700px;
+}
+
+.data{
+	height: 100%;
+	width: 87%;
+	top: 0px;
+	left: 200px;
+	margin: auto;
+	overflow: hidden;
+	border: 1px solid black;
+	float: left;
+}
