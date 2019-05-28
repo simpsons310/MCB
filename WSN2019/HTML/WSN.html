@@ -1,398 +1,519 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title> WSN2019 </title>
-		<link rel="Shortcut Icon" href="image/WSN.ico">
-		<meta http-equiv="content-type" content="tex/html">
-		<meta charset="UTF-8">
-		<meta rel="stylesheet" href="font/Roboto.woff2">
-		<meta rel="stylesheet" href="font/Lato.woff2">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<style>
-			body{
-				font-family: "Roboto",sans-serif;
-			}
-			a.button-side{
-				display: block;
-				height: 50px;
-				font-size: 20px;
-				vertical-align: middle;
-				line-height: 50px;
-				border-bottom: 1px solid #145A89;
-				border-top: 1px solid #4593C7;
-				color: white;
-				text-decoration: none;
-			}
-			a.button-side:hover{
-				background-color: #b1b1b1;
-			}
-			div.page-title{
-				height: 40px;
-				width: 100%;
-				margin: 15px 0px 0px 30px;
-				font-weight: bold;
-				font-size: 30px;
-				border-bottom: 1px solid gray;	
-			}
-			div.sub-title{
-				height: 60px;
-				width: 100%;
-				vertical-align: middle;
-				line-height: 60px;
-				font-weight: bold;
-				background-color: #b1b1b1;
-				font-size: 25px;	
-			}
-			tbody{
-				font-size: 20px;
-			}
-			td{
-				height: 40px;
-				min-width:100px;
-				border-top: 1px solid #145A89;
-				padding-left: 20px;	
-			}			
-			.slider {
-			  position: absolute;
-			  top: 0;
-			  left: 0;
-			  right: 0;
-			  bottom: 0;
-			  background-color: #ccc;
-			  transition: .4s;
-			}
-			.slider:before {
-			  position: absolute;
-			  content: "C";
-			  text-align: center;
-			  height: 22px;
-			  width: 22px;
-			  left: 6px;
-			  bottom: 4px;
-			  background-color: white;
-			  transition: .4s;
-			}
-			input:checked + .slider {
-			  background-color: #2196F3;
-			}
-			input:checked + .slider:before {
-			  transform: translateX(36px);
-			  content: "F";
-			}
-		</style>
-		<script>
-			function openPage(pageName,sideTab) {
-  				var i, tabcontent,sidetab;
-  				tabcontent = document.getElementsByClassName("page");
-  				for (i = 0; i < tabcontent.length; i++) {
-  		  			tabcontent[i].style.display = "none";
-  				}
- 			 	document.getElementById(pageName).style.display = "block";
- 			 	document.getElementById(sideTab).style.backgroundColor = "#b1b1b1";			 	
-			}
-			function convertCF(){
-				if(document.getElementById("temp-button").checked == true){
-					document.getElementById("temp-range").innerHTML = "32 - 122";
-				}else{
-					document.getElementById("temp-range").innerHTML = "0 - 50";
-				}
-			}
-			function rgb2hex(r,g,b){
-				return "#" + ("0" + r.toString(16)).slice(-2) + ("0" + g.toString(16)).slice(-2) + ("0" + b.toString(16)).slice(-2);
-			}
-			function drawDonut(canvasID,value,minValue,maxValue,status,rgb){
-				var oldValue = 0;
-				var can = document.getElementById(canvasID);
-				c = can.getContext('2d');
-				var range = maxValue - minValue,
-					 ratio = 100/range,
-					 posX = can.width / 2;
-					 posY = can.height / 2;
-					 fps = 1000 / 200;
-					 procent = 0,
-					 oneProcent = 360 / range;
-					 oneColor = 150 / range,
-					 result = oneProcent * (value - minValue);
-				c.lineCap = 'round';
-				c.font = "45px Lato";
-				arcMove();
-				function arcMove(){
-					var deegres = oldValue * oneProcent;
-					if (oldValue > value){
-						factor = -1;	
-					}else{
-						factor = 1;
-					}
-					var acrInterval = setInterval (function() {
-      					deegres += 1 * factor;
-      					c.clearRect( 0, 0, can.width, can.height );
-      					procent = deegres / oneProcent + minValue;
-      					if(rgb == 0){
-      						colorR = 255;
-      						colorG = parseInt((360 - deegres) * ratio / oneColor);
-      						colorB = 0;
-      					}else if(rgb == 1){
-      						colorR = 0;
-      						colorG = parseInt((360 - deegres) * ratio / oneColor);
-      						colorB = 255;
-      					}else if(rgb == 2){
-      						colorR = parseInt((360 - deegres / 2) * ratio / oneColor);
-      						colorG = parseInt((360 - deegres) * ratio / oneColor);
-      						colorB = 0;
-      					}
-      					c.beginPath();
-      					c.arc( posX, posY, 70, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
-      					c.strokeStyle = '#b1b1b1';
-      					c.lineWidth = '30';
-      					c.stroke();
-      					c.beginPath();
-      					c.strokeStyle = rgb2hex(colorR,colorG,colorB);
-      					c.lineWidth = '30';
-      					c.arc( posX, posY, 70, (Math.PI/180) * 270, (Math.PI/180) * (270 + deegres) );
-      					c.stroke();
-      					c.fillStyle = rgb2hex(colorR,colorG,colorB);
-      					c.fillText(procent.toFixed(1),posX-40,posY+15);
-      					document.getElementById(status).style.color= rgb2hex(colorR,colorG,colorB);
-      					if( deegres * factor >= result * factor ) clearInterval(acrInterval);
-    				}, fps);
-    			}
-			}
-			
-		</script>
-	</head>
-	<body style="position:relative; margin: 0px;">
-		<!-Taskbar-->
-		<div id ="taskbar" style = "position:fixed;top:0px;left:0px;height: 70px;width:100%; background-color: #18699F;">
-			<div style="position:relative;left:30px;line-height:70px;vertical-align:middle;color: white;">
-				<span style="font-size:40px;font-weight:bold"> Wireless Sensor Network </span>
-			</div>
-		</div>
-		<!-Sidebar-->
-		<div id="sidebar" style="position:fixed;width: 200px;height:1000px; background-color: #18699F; padding: 0px; margin: 70px 0px; color: white; float:left;">
-			<div id="menu_text" style="height: 60px; text-align: center; vertical-align: middle; line-height: 60px; border-bottom: 1px solid #145A89">
-				<p style="font-size: 30px;margin: 0;px border-bottom: 1px solid #145A89; border-top: 1px solid #4593C7"><strong> MENU </strong></p>
-			</div>
-			<div id="menu-context" style">
-				<nav id="list" style="font-weight: bold">
-					<a onclick="openPage('general-page')" href="#general-page" class="button-side" title="General" id="general-button"> 
-						<div id="align-general" style="height:30px;width:30px;float:left;"></div>
-						<div id="general-text"> General </div>
-					</a>
-					<a onclick="openPage('graph-page')" href="#graph-page" class="button-side" title="Graph">
-						<div id="align-general" style="height:30px;width:30px;float:left;"></div>
-						<div id="Grpah-text"> Graph </div>
-					</a>
-					<a onclick="openPage('statistics-page')" href="#statistics-page" class="button-side" title="Statistics">
-						<div id="align-general" style="height:30px;width:30px;float:left;"></div>
-						<div id="statistics-text"> Statistics </div>
-					</a>
-					<a onclick="openPage('control-page')" href="#control-page" class="button-side" title="control">
-						<div id="align-general" style="height:30px;width:30px;float:left;"></div>
-						<div id="control-text"> Control </div>
-					</a>
-				</nav>
-			</div>
-		</div>
-		<!-Page-content-->
-		<div id="page-content" style="float:left;height:1000px;color: #18699F;margin: 70px 0px 0px 200px;">
-			<div id="general-page" class="page">
-				<div id="general-title" class="page-title"> 
-					<div> General </div>	
-				</div>
-				<!-Temperature-->
-				<div id="temperature" style="margin:20px 0px 0px 60px;border: 1px solid gray;float:left">
-					<div id="temperature-text" class="sub-title"><span style="margin-left: 15px"> Temperature </span></div>
-					<div style="height:250px;width:250px;float:left">
- 		 				<canvas id="donut-temp" width="250" height="250">
-  						</canvas>
-					</div>
-					<div id= id="temp-stat" style="float:left;margin: 10px 35px 0px 10px;">
-						<table title="Temperature Table" style="border-collapse:collapse">
-							<tbody >
-								<tr>
-									<td style="border: none;"> Averate </td>
-									<td style="border: none;"> 35 </td>
-									<td style="border: none;"> 22/10/2019 </td>
-								</tr>
-								<tr>
-									<td> Max </td>
-									<td> 25 </td>
-									<td> 12:25:36 </td>
-								</tr>
-								<tr>
-									<td> Min </td>
-									<td> 11 </td>
-									<td> 05:15:53 </td>
-								</tr>
-								<tr>
-									<td> Status </td>
-									<td colspan="2" style="text-align:center" id="temp-status"> Hot </td>
-								<tr>
-									<td> Range </td>
-									<td id="temp-range" style="width:75px"> 0 - 50 </td>
-									<td> 
-										<label class="switch" style="position:relative;display:inline-block;width:70px;height:30px;margin:5px 0px 0px 5px">
-										 	<input type="checkbox" style="opacity=0;height:0;witdh:0" onclick="convertCF()" id="temp-button">
-											<span class="slider"></span>
-										</label>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<!-Humidity-->
-				<div id="humidity" style="margin:20px 0px 0px 60px;border: 1px solid gray;float:left;">
-					<div id="humidity-text" class="sub-title"><span style="margin-left: 15px"> Humidity </span></div>
-					<div style="height:250px;width:250px;float:left">
- 		 				<canvas id="donut-hum" width="250" height="250">
-  						</canvas>
-					</div>
-					<div id= id="hum-stat" style="float:left;margin: 10px 35px 0px 10px;">
-						<table title="Humidity Table" style="border-collapse:collapse">
-							<tbody >
-								<tr>
-									<td style="border: none;"> Averate </td>
-									<td style="border: none;"> 35 </td>
-									<td style="border: none;"> 22/10/2019 </td>
-								</tr>
-								<tr>
-									<td> Max </td>
-									<td> 90 </td>
-									<td> 12:25:36 </td>
-								</tr>
-								<tr>
-									<td> Min </td>
-									<td> 70 </td>
-									<td> 05:15:53 </td>
-								</tr>
-								<tr>
-									<td> Status </td>
-									<td colspan="2" style="text-align:center" id="hum-status"> Wet </td>
-								<tr>
-									<td> Range </td>
-									<td colspan="2" style="text-align:center"> 20 - 95 (%) </td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>				
-				<!-Dust-->
-				<div id="dust" style="margin:50px 0px 0px 60px;border: 1px solid gray;float:left;">
-					<div id="dust-text" class="sub-title"><span style="margin-left: 15px"> Dust </span></div>
-					<div style="height:250px;width:250px;float:left">
- 		 				<canvas id="donut-dust" width="250" height="250">
-  						</canvas>
-					</div>
-					<div id= id="dust-stat" style="float:left;margin: 10px 35px 0px 10px;">
-						<table title="Dust Table" style="border-collapse:collapse">
-							<tbody >
-								<tr>
-									<td style="border: none;"> Averate </td>
-									<td style="border: none"> 35 </td>
-									<td style="border: none;"> 22/10/2019 </td>
-								</tr>
-								<tr>
-									<td> Max </td>
-									<td> 90 </td>
-									<td> 12:25:36 </td>
-								</tr>
-								<tr>
-									<td> Min </td>
-									<td> 70 </td>
-									<td> 05:15:53 </td>
-								</tr>
-								<tr>
-									<td> Status </td>
-									<td colspan="2" style="text-align:center" id="dust-status"> Wet </td>
-								<tr>
-									<td> Range </td>
-									<td colspan="2" style="text-align:center"> 0 - 500 </td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>	
-				<!-Light-->			
-				<div id="light" style="margin:50px 0px 0px 60px;border: 1px solid gray;float:left;">
-					<div id="light-text" class="sub-title"><span style="margin-left: 15px"> Light </span></div>
-					<div style="height:250px;width:250px;float:left">
- 		 				<canvas id="donut-light" width="250" height="250">
-  						</canvas>
-					</div>
-					<div id= id="dust-stat" style="float:left;margin: 10px 35px 0px 10px;">
-						<table title="Dust Table" style="border-collapse:collapse">
-							<tbody >
-								<tr>
-									<td style="border: none;">  </td>
-									<td style="border: none;min-width:unset"> L1 </td>
-									<td style="border: none;min-width:unset"> L2 </td>
-									<td style="border: none;"> 22/10/2019 </td>
-								</tr>
-								<tr>
-									<td> Max </td>
-									<td style="min-width:unset"> 120 </td>
-									<td style="min-width:unset"> 1000 </td>
-									<td> 12:25:36 </td>
-								</tr>
-								<tr>
-									<td> Min </td>
-									<td style="min-width:unset"> 700 </td>
-									<td style="min-width:unset"> 260 </td>
-									<td> 05:15:53 </td>
-								</tr>
-								<tr>
-									<td> Status </td>
-									<td colspan="3" style="text-align:center" id="light-status"> Wet </td>
-								<tr>
-									<td> Range </td>
-									<td colspan="3" style="text-align:center"> 0 - 1023 </td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>	
-				<!-Control-tempotary-->
-				<button type="button" onclick="drawDonut('donut-temp',30,0,50,'temp-status',0)">Temp</button>
-				<button type="button" onclick="drawDonut('donut-hum',50,20,95,'hum-status',1)">Hum</button>
-				<button type="button" onclick="drawDonut('donut-dust',32,0,50,'dust-status',2)">Dust</button>		
-			<!-Graph-page-->			
-			<div id="graph-page" class="page" style="display:none"> 
-				<div id="graph-title" class="page-title"> Graph </div>
-			</div>
-			<div id="statistics-page" class="page" style="display:none">
-				<div id="statistics-title" class="page-title"> Statistics </div>
-			</div>	
-			<div id="control-page" class="page" style="display:none">
-				<div id="control-title" class="page-title"> Control </div>
-			</div>
-		</div>
-	</body>
+  <head>
+    <title> WSN2019 </title>
+    <link rel="Shortcut Icon" href="image/WSN.ico">
+    <meta http-equiv="content-type" content="tex/html">
+    <meta charset="UTF-8">
+    <meta rel="stylesheet" href="font/Roboto.woff2">
+    <meta rel="stylesheet" href="font/Lato.woff2">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      body{
+        font-family: "Roboto",sans-serif;
+      }
+      a.button-side{
+        display: block;
+        height: 50px;
+        font-size: 20px;
+        vertical-align: middle;
+        line-height: 50px;
+        border-bottom: 1px solid #145A89;
+        border-top: 1px solid #4593C7;
+        color: white;
+        text-decoration: none;
+      }
+      a.button-side:hover{
+        background-color: #b1b1b1;
+      }
+      div.page-title{
+        height: 40px;
+        width: 100%;
+        margin: 15px 0px 0px 30px;
+        font-weight: bold;
+        font-size: 30px;
+        border-bottom: 1px solid gray;  
+      }
+      div.sub-title{
+        height: 60px;
+        width: 100%;
+        vertical-align: middle;
+        line-height: 60px;
+        font-weight: bold;
+        background-color: #b1b1b1;
+        font-size: 25px;  
+      }
+      tbody{
+        font-size: 20px;
+      }
+      td{
+        height: 40px;
+        min-width:100px;
+        border-top: 1px solid #145A89;
+        padding-left: 20px; 
+      }     
+      .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+      }
+      .slider:before {
+        position: absolute;
+        content: "C";
+        text-align: center;
+        height: 22px;
+        width: 22px;
+        left: 6px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+      }
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      input:checked + .slider:before {
+        transform: translateX(36px);
+        content: "F";
+      }
+      .ledButton{
+      	margin:10px 0 0 70px;
+      	height:100px;
+      	width:100px;
+      	font-size:40px;
+      	background-color: red;
+      	outline: none;
+      	border:2px solid black;
+      	color: white;
+      }
+      .ledButton:hover{
+      	background-color: #b1b1b1;
+      }
+    </style>
+    <script>
+      function openPage(pageName,sideTab) {
+          var i, tabcontent,sidetab;
+          tabcontent = document.getElementsByClassName("page");
+          for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+          }
+        document.getElementById(pageName).style.display = "block";
+        document.getElementById(sideTab).style.backgroundColor = "#b1b1b1";       
+      }
+      function convertCF(){
+        if(document.getElementById("temp-button").checked == true){
+          document.getElementById("temp-range").innerHTML = "32 - 122";
+        }else{
+          document.getElementById("temp-range").innerHTML = "0 - 50";
+        }
+      }
+      function rgb2hex(r,g,b){
+        return "#" + ("0" + r.toString(16)).slice(-2) + ("0" + g.toString(16)).slice(-2) + ("0" + b.toString(16)).slice(-2);
+      }
+      function drawDonut(c,posX,posY,value,oldValue,minValue,maxValue,status,rgb){
+        //var can = document.getElementById(canvasID);
+        //c = can.getContext('2d');
+        var range = maxValue - minValue,
+           ratio = 100/range,
+           //posX = can.width / 2,
+           //posY = can.height / 2,
+           fps = 1000 / 200,
+           procent = 0,
+           oneProcent = 360 / range,
+           oneColor = 150 / range,
+           result = oneProcent * (value - minValue);
+        c.font = "40px Lato";
+          var deegres = oldValue * oneProcent;
+        if (oldValue > value){
+          factor = -1;  
+        }else{
+          factor = 1;
+        }
+        var acrInterval = setInterval (function() {
+            deegres += 1 * factor;
+            c.clearRect( 0, 0, posX*2, posY*2 );
+            procent = deegres / oneProcent + minValue;
+            if(procent > maxValue){
+              procent = maxValue;
+            }else if(procent < minValue){
+              procent = minValue;
+            }
+            if(rgb == 0){
+              colorR = 255;
+              colorG = parseInt((360 - deegres) * ratio / oneColor);
+              colorB = 0;
+              index = 1;
+            }else if(rgb == 1){
+              colorR = 0;
+              colorG = parseInt((360 - deegres) * ratio / oneColor);
+              colorB = 255;
+              index = 1;
+            }else if(rgb == 2){
+              colorR = parseInt((360 - deegres / 2) * ratio / oneColor);
+              colorG = parseInt((360 - deegres) * ratio / oneColor);
+              colorB = 0;
+              index = 0;
+            }else if(rgb == 3){
+              colorR = parseInt(deegres * ratio / oneColor);
+              colorG = 255;
+              colorB = 0;
+              index = 0;
+            }
+            c.beginPath();
+            c.arc( posX, posY, 70, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
+            c.strokeStyle = '#b1b1b1';
+            c.lineWidth = '30';
+            c.stroke();
+            c.beginPath();
+            c.strokeStyle = rgb2hex(colorR,colorG,colorB);
+            c.lineWidth = '30';
+            c.arc( posX, posY, 70, (Math.PI/180) * 270, (Math.PI/180) * (270 + deegres) );
+            c.stroke();
+            c.fillStyle = rgb2hex(colorR,colorG,colorB);
+            c.textAlign = "center";
+            c.textBaseline = "middle";
+            c.fillText(procent.toFixed(index),posX,posY);
+            document.getElementById(status).style.color= rgb2hex(colorR,colorG,colorB);
+            if( deegres * factor >= result * factor ) clearInterval(acrInterval);
+        }, fps);
+      }
+      function printData(){
+        temp = document.getElementById('donut-temp');
+        hum = document.getElementById('donut-hum');
+        dust = document.getElementById('donut-dust');
+        light = document.getElementById('donut-light');
+        light2 = document.getElementById('donut-light2');
+        ctemp = temp.getContext('2d');
+        chum = hum.getContext('2d');
+        cdust = dust.getContext('2d');
+        clight = light.getContext('2d');
+        clight2 = light2.getContext('2d');
+        posXtemp = temp.width/2;
+        posYtemp = temp.height/2;
+        posXhum = hum.width/2;
+        posYhum = hum.height/2;
+        posXdust = dust.width/2;
+        posYdust = dust.height/2;
+        posXlight = light.width/2;
+        posYlight = light.height/2;
+        posXlight2 = light2.width/2;
+        posYlight2 = light2.height/2;
+        //Get last value
+        lastTemp = document.getElementById("lastTemp").innerHTML;
+        lastHum = document.getElementById("lastHum").innerHTML;
+        lastDust = document.getElementById("lastDust").innerHTML;
+        lastLight = document.getElementById("lastLight").innerHTML;
+        lastLight2 = document.getElementById("lastLight2").innerHTML;
+        //Draw donut progress
+        drawDonut(ctemp,posXtemp,posYtemp,data[1],lastTemp,0,50,'temp-status',0);
+        drawDonut(chum,posXhum,posYhum,data[0],lastHum,20,95,'hum-status',1);
+        drawDonut(cdust,posXdust,posYdust,data[4],lastDust,0,500,'dust-status',2); 
+        drawDonut(clight,posXlight,posYlight,data[2],lastLight,0,1023,'light-status',3);
+        drawDonut(clight2,posXlight2,posYlight2,data[3],lastLight,0,1023,'light-status',3);
+        //Last value
+        document.getElementById("lastTemp").innerHTML = data[1];
+        document.getElementById("lastHum").innerHTML = data[0];
+        document.getElementById("lastDust").innerHTML = data[4]
+        document.getElementById("lastLight").innerHTML = data[2];
+        document.getElementById("lastLight").innerHTML = data[3];
+      }
+      
+      //window.onload = function(){
+         var state = "";
+      function sendData(){
+      	alert("DSFSDF");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("LEDState").innerHTML = this.responseText;
+            state = this.responseText;
+          }
+        };
+        xhttp.open("GET", "setLED?LEDstate="+state, true);
+        xhttp.send();
+      }
+      setInterval(function() {
+        getData();
+      }, 3000);    
+      function getData() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var s = this.responseText;
+              var temp = ""; 
+              var data = [];
+              var j = 0;
+              for (var i = 0; i < s.length; i++){
+                if(s[i] == "#"){
+                  data[j] = temp;
+                  temp = "";
+                  j++;
+                }else{
+                  temp = temp + s[i];
+                }
+              }
+             printData(data);
+            }
+          };
+          xhttp.open("GET", "/data", true);
+          xhttp.send();
+      	}
+      //}
+      // Using HTTPRequest to GET and POST data
+    </script>
+  </head>
+  <body style="position:relative; margin: 0px;">
+    <!-Taskbar-->
+    <div id ="taskbar" style = "position:fixed;top:0px;left:0px;height: 70px;width:100%; background-color: #18699F;">
+      <div style="position:relative;left:30px;line-height:70px;vertical-align:middle;color: white;">
+        <span style="font-size:40px;font-weight:bold"> Wireless Sensor Network </span>
+      </div>
+    </div>
+    <!-Sidebar-->
+    <div id="sidebar" style="position:fixed;width: 200px;height:1000px; background-color: #18699F; padding: 0px; margin: 70px 0px; color: white; float:left;">
+      <div id="menu_text" style="height: 60px; text-align: center; vertical-align: middle; line-height: 60px; border-bottom: 1px solid #145A89">
+        <p style="font-size: 30px;margin: 0;px border-bottom: 1px solid #145A89; border-top: 1px solid #4593C7"><strong> MENU </strong></p>
+      </div>
+      <div id="menu-context" style">
+        <nav id="list" style="font-weight: bold">
+          <a onclick="openPage('general-page')" href="#general-page" class="button-side" title="General" id="general-button"> 
+            <div id="align-general" style="height:30px;width:30px;float:left;"></div>
+            <div id="general-text"> General </div>
+          </a>
+          <a onclick="openPage('graph-page')" href="#graph-page" class="button-side" title="Graph">
+            <div id="align-general" style="height:30px;width:30px;float:left;"></div>
+            <div id="Grpah-text"> Graph </div>
+          </a>
+          <a onclick="openPage('statistics-page')" href="#statistics-page" class="button-side" title="Statistics">
+            <div id="align-general" style="height:30px;width:30px;float:left;"></div>
+            <div id="statistics-text"> Statistics </div>
+          </a>
+          <a onclick="openPage('control-page')" href="#control-page" class="button-side" title="control">
+            <div id="align-general" style="height:30px;width:30px;float:left;"></div>
+            <div id="control-text"> Control </div>
+          </a>
+        </nav>
+      </div>
+    </div>
+    <!-Page-content-->
+    <div id="page-content" style="float:left;height:1000px;color: #18699F;margin: 70px 0px 0px 200px;">
+      <div id="general-page" class="page">
+        <div id="general-title" class="page-title"> 
+          <div> General </div>  
+        </div>
+        <!-Temperature-->
+        <div id="temperature" style="margin:20px 0px 0px 60px;border: 1px solid gray;float:left">
+          <div id="temperature-text" class="sub-title"><span style="margin-left: 15px"> Temperature </span></div>
+          <div style="height:250px;width:250px;float:left">
+            <canvas id="donut-temp" width="250" height="250">
+              </canvas>
+          </div>
+          <div id= id="temp-stat" style="float:left;margin: 10px 35px 0px 10px;">
+            <table title="Temperature Table" style="border-collapse:collapse">
+              <tbody >
+                <tr>
+                  <td style="border: none;"> Last value </td>
+                  <td style="border: none;" id="lastTemp"> 35 </td>
+                  <td style="border: none;"> 22/10/2019 </td>
+                </tr>
+                <tr>
+                  <td> Max </td>
+                  <td id="maxTemp"> 0 </td>
+                  <td> 12:25:36 </td>
+                </tr>
+                <tr>
+                  <td> Min </td>
+                  <td id="minTemp"> 50 </td>
+                  <td> 05:15:53 </td>
+                </tr>
+                <tr>
+                  <td> Status </td>
+                  <td colspan="2" style="text-align:center" id="temp-status"> Hot </td>
+                <tr>
+                  <td> Range </td>
+                  <td id="temp-range" style="width:75px"> 0 - 50 </td>
+                  <td> 
+                    <label class="switch" style="position:relative;display:inline-block;width:70px;height:30px;margin:5px 0px 0px 5px">
+                      <input type="checkbox" style="opacity=0;height:0;witdh:0" onclick="convertCF()" id="temp-button">
+                      <span class="slider"></span>
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-Humidity-->
+        <div id="humidity" style="margin:20px 0px 0px 60px;border: 1px solid gray;float:left;">
+          <div id="humidity-text" class="sub-title"><span style="margin-left: 15px"> Humidity </span></div>
+          <div style="height:250px;width:250px;float:left">
+            <canvas id="donut-hum" width="250" height="250">
+              </canvas>
+          </div>
+          <div id= id="hum-stat" style="float:left;margin: 10px 35px 0px 10px;">
+            <table title="Humidity Table" style="border-collapse:collapse">
+              <tbody >
+                <tr>
+                  <td style="border: none;"> Last value </td>
+                  <td style="border: none;" id="lastHum"> 60 </td>
+                  <td style="border: none;"> 22/10/2019 </td>
+                </tr>
+                <tr>
+                  <td> Max </td>
+                  <td id="maxHum"> 20 </td>
+                  <td> 12:25:36 </td>
+                </tr>
+                <tr>
+                  <td> Min </td>
+                  <td id="minHum"> 95 </td>
+                  <td> 05:15:53 </td>
+                </tr>
+                <tr>
+                  <td> Status </td>
+                  <td colspan="2" style="text-align:center" id="hum-status"> Wet </td>
+                <tr>
+                  <td> Range </td>
+                  <td colspan="2" style="text-align:center"> 20 - 95 (%) </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>        
+        <!-Dust-->
+        <div id="dust" style="margin:50px 0px 0px 60px;border: 1px solid gray;float:left;">
+          <div id="dust-text" class="sub-title"><span style="margin-left: 15px"> Dust </span></div>
+          <div style="height:250px;width:250px;float:left">
+            <canvas id="donut-dust" width="250" height="250">
+              </canvas>
+          </div>
+          <div id= id="dust-stat" style="float:left;margin: 10px 35px 0px 10px;">
+            <table title="Dust Table" style="border-collapse:collapse">
+              <tbody >
+                <tr>
+                  <td style="border: none;"> Last value </td>
+                  <td style="border: none" id="lastDust"> 350 </td>
+                  <td style="border: none;"> 22/10/2019 </td>
+                </tr>
+                <tr>
+                  <td> Max </td>
+                  <td id="maxDust"> 0 </td>
+                  <td> 12:25:36 </td>
+                </tr>
+                <tr>
+                  <td> Min </td>
+                  <td id="minDust"> 900 </td>
+                  <td> 05:15:53 </td>
+                </tr>
+                <tr>
+                  <td> Status </td>
+                  <td colspan="2" style="text-align:center" id="dust-status"> Wet </td>
+                <tr>
+                  <td> Range </td>
+                  <td colspan="2" style="text-align:center"> 0 - 500 </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>  
+        <!-Light-->     
+        <div id="light" style="margin:50px 0px 0px 60px;border: 1px solid gray;float:left;">
+          <div id="light-text" class="sub-title"><span style="margin-left: 15px"> Light </span></div>
+          <div style="height:250px;width:250px;float:left">
+            <canvas id="donut-light" width="250" height="250">
+              </canvas>
+          </div>
+          <div id= id="light-stat" style="float:left;margin: 10px 35px 0px 10px;">
+            <table title="Light Table" style="border-collapse:collapse">
+              <tbody >
+                <tr>
+                  <td style="border: none;"> Last value </td>
+                  <td style="border: none" id="lastLight"> 35 </td>
+                  <td style="border: none;"> 22/10/2019 </td>
+                </tr>
+                <tr>
+                  <td> Max </td>
+                  <td id="maxLight"> 0 </td>
+                  <td> 12:25:36 </td>
+                </tr>
+                <tr>
+                  <td> Min </td>
+                  <td id="minLight"> 1023 </td>
+                  <td> 05:15:53 </td>
+                </tr>
+                <tr>
+                  <td> Status </td>
+                  <td colspan="2" style="text-align:center" id="light-status"> Wet </td>
+                <tr>
+                  <td> Range </td>
+                  <td colspan="2" style="text-align:center"> 0 - 500 </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>  
+        <!-Light-2-->  
+        <div id="light2" style="margin:50px 0px 0px 60px;border: 1px solid gray;float:left;">
+          <div id="light2-text" class="sub-title"><span style="margin-left: 15px"> Light2 </span></div>
+          <div style="height:250px;width:250px;float:left">
+            <canvas id="donut-light2" width="250" height="250">
+              </canvas>
+          </div>
+          <div id= id="light2-stat" style="float:left;margin: 10px 35px 0px 10px;">
+            <table title="Light2 Table" style="border-collapse:collapse">
+              <tbody >
+                <tr>
+                  <td style="border: none;"> Last value </td>
+                  <td style="border: none" id="lastLight2"> 35 </td>
+                  <td style="border: none;"> 22/10/2019 </td>
+                </tr>
+                <tr>
+                  <td> Max </td>
+                  <td id="maxLight2"> 0 </td>
+                  <td> 12:25:36 </td>
+                </tr>
+                <tr>
+                  <td> Min </td>
+                  <td id="minLight2"> 1023 </td>
+                  <td> 05:15:53 </td>
+                </tr>
+                <tr>
+                  <td> Status </td>
+                  <td colspan="2" style="text-align:center" id="light2-status"> Wet </td>
+                <tr>
+                  <td> Range </td>
+                  <td colspan="2" style="text-align:center"> 0 - 500 </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>  
+      <!-Control-->
+      <div id="control" style="height:309px;width:659px;margin:50px 0px 0px 60px;border: 1px solid gray;float:left;">
+        <div id="control-text" class="sub-title"><span style="margin-left: 15px"> Control </span></div>
+        		<div style="height:70px;width:250px;font-size:30px;line-height:70px;vertical-align:middle;text-align:center"> LED Control </div>
+        		<button type="button" class="ledButton" onclick="sendData()"> LED </button>
+        		<button type="button" class="ledButton" onclick="sendData()"> LED </button>
+        		<div style="font-size:25px;line-height:30px;vertical-align:middle;margin:40px 0px 0px 40px;float:left">GREEN: <span id="LEDState"> ON </div>
+        		<div style="font-size:25px;line-height:30px;vertical-align:middle;margin:0px 0px 0px 40px;float:left">YELLOW: <span id="LEDState"> ON </div>
+        </div>
+      </div>
+            
+      <!-Graph-page-->      
+      <div id="graph-page" class="page" style="display:none"> 
+        <div id="graph-title" class="page-title"> Graph </div>
+      </div>
+      <div id="statistics-page" class="page" style="display:none">
+        <div id="statistics-title" class="page-title"> Statistics </div>
+      </div>  
+      <div id="control-page" class="page" style="display:none">
+        <div id="control-title" class="page-title"> Control </div>
+      </div>
+    </div>
+  </body>
+  <script>
+  	printData();
+  </script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

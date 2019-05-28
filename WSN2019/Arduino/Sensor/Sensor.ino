@@ -11,17 +11,16 @@
 #define DUSTD 14
 #define DHTPIN 12
 #define DHTTYPE DHT11   
-#define LED 2
+#define WARNING_LED 16
 DHT dht(DHTPIN, DHTTYPE);
 SharpGP2Y10 dustSensor(ANALOG, DUSTD,3.3);
 
 //const char* ssid = "FPT_2";
 //const char* password = "abcd1234";
-//const char* ssid = "CangTmin2";
-//const char* password = "giang115";
-const char* ssid = "tang_2";
-const char* password = "12345679";
-
+const char* ssid = "CangTin2";
+const char* password = "giang115";
+//const char* ssid = "tang_2";
+//const char* password = "12345679";
 
 ESP8266WebServer server(80);
 
@@ -40,14 +39,18 @@ void handleData(){
  delay(10);
  digitalWrite(MUXA,HIGH);
  digitalWrite(MUXB,LOW);
- float light2 = analogRead(ANALOG);
+ float dust = dustSensor.getDustDensity() * 100;
  delay(10);
- digitalWrite(MUXA,LOW);
- digitalWrite(MUXB,LOW);
- float dust = dustSensor.getDustDensity();
- delay(10);
- String s = String(hum) +"#"+ String(temp) +"#"+ String(light1) +"#"+ String(light1) +"#"+ String(dust) + "#";
+ String s = String(hum) +"#"+ String(temp) +"#"+ String(light1) +"#"+ String(dust) + "#";
  server.send(200, "text/plane", s);
+ if(temp >= 30){
+    pinMode(13, OUTPUT);
+    digitalWrite(13, HIGH); 
+ }
+ if(temp < 30){
+    pinMode(13, OUTPUT);
+    digitalWrite(13, LOW);
+ }
 }
 
 void handleLED() {
@@ -55,10 +58,10 @@ void handleLED() {
  String t_state = server.arg("LEDstate"); //Refer  xhttp.open("GET", "setLED?LEDstate="+led, true);
  Serial.println(t_state);
  if(t_state == "ON"){
-  digitalWrite(LED,LOW); //LED ON
+  digitalWrite(WARNING_LED,LOW); //LED ON
   ledState = "OFF"; //Feedback parameter
  }else{
-  digitalWrite(LED,HIGH); //LED OFF
+  digitalWrite(WARNING_LED,HIGH); //LED OFF
   ledState = "ON"; //Feedback parameter  
  }
  server.send(200, "text/plane", ledState); //Send web page
@@ -68,7 +71,7 @@ void setup() {
   Serial.begin(115200); 
   pinMode(MUXA,OUTPUT);
   pinMode(MUXB,OUTPUT);
-  pinMode(LED,OUTPUT);
+  pinMode(WARNING_LED,OUTPUT);
   dht.begin();
   WiFi.begin(ssid, password);
   Serial.println("");

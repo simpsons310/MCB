@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Vu Tuan Anh</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEX///8AAACNjY3y8vKlpKR+fX5pZ2hkYWHDwcKBfX739/fs7OwdGhvR0dHd3N07OjpUU1MsKyucm5vk5OSurKzX19clJCSJiIhcWVk0MTFFQUI9ODlyb3C5t7hPTU1XV1fLysoQDQxwbW4YExQOAAMZGRlFQEKfnp4iGh2zsrItLCx/xMksAAAIl0lEQVR4nO2de3uiOhDGq8iKIPeLyIJiu92e7vf/gKeu61MkwUySCQnK++85RX5LkrlkMnl5mTVr1qxZs2bNmjVr1qxZs0aUlQa+37aO47St7weppfuF8OQGTWKXx0MV7uOi2G63RRHvw+pwLO2kCVzdrycj10ubZblgqVw2qTdBUK9d2Qcm3VUHe9V6ul+ZR25TVwUY76KiqptpfEk3yCpOuG9VmfETM8jskzDfWSc7C3RD3FG+CaXwLgo3uW4Qurxmi4B30bYxb91JE/HZR1OVpLqRbmTtMIbnrcKdOW5PmqDjXWTId7SSvSLAxWKfGPAdnUgZ31mRo5kvwF1faKp02kcrOSkH/HIC9A3VHH8BpSvU4wJ4m5H4ztpo8ABytStMX9HonzGLRwVcLOJsVD7rx8h8Z61HXHBydm5ChcrRRqoz9gi9Kh7J/K808Z21GoHP3WkEXCx26rMca62AX+uNYj5vXCtIU6TU+Ht6FtFblSoRf+qm+6ufyvg8MwC/EBV9RSOG6EWKBqr+ReZbkQI+V7eZuNUa3y7qNfSkdtiAOl01upAdOEc3D0WobniuK5q4pxgxmLLMsRNdlXghsY6IHiI0LzzTTTIopNyNkZPwIpypaEDANCyUUGrMxC+/NvKAuW4GhqTHqTXW3oSoQlmToWp7F0+JHGBw0g3A1Eluf1H9Bqi8KhlAEx1uUhIuuGWyKfxWJL7YmL/MXCS82KTqykhwtRetu5nKJxT+iJbu9+aQ2Ew0Lfd0T0J5qdR0f62rUGQmTmcWniUwE70puDPfqvgDxUb3O3Oq4SZklDS/hT3xnj7o6nRYc4nmam15AVmBb+kHN0qXEoTbFuHleENhVu7iR98CyaT9t5y+s097CGc+I2CZCvMIQ744kZkiNY+QL3nq2hMktHm2FNnJCwMJudIZ7Dy+gYRcw5Ttz5hIyJGwcdkvZSLhAj4RAR6bkYRwz62eKGENfQAkrDCSEBxgtAAv2kjCogU+APKyRhJCK1DYDo2xhEC3xoOco8clbPkIB0O7A2wippCXQiVclJuubGLV/7Rv/ofh2hBYQgqUv8Al7InIDULmzV/BLCIoWldKuBQmJP6SKlABlKGEJYgQ9ChDCRcQQIDbvTCXEGIuAtCTTCWERMGwVDA34XsVreuvlf51HYWs9hIShJDFFLZfwUf4Vn846XUAuamT1HchJQgh+xewp/EQ/rcius5Y6ccd916C0AYQwqpl4YTR0MBxBoM0CUKIuTiiEsafw6ublQ0UCkgQHtmAFqx/FZBwfX9tG6jslCA8sPe7U9i+IYyQHa+tTriEFdv3Zu5YwAnjT+av0cuuJAgBuxc+rIgGQPgOi2sp9leCcO+zCWFV3QBC9m9d5BC2UYIwZv8qJA0FIoSf2vlEJAQko7AIeTYs+/lZtYTkmBEi5Do91z+TI0EISGohEfLtqvd+dAqEr1yA/XGqlhBlHha8RVi3VYITWGlgCaFBBrWEGPZw4GfypF7XCd1g3SR51dpDDJ/mB+W57urt3389ZRTv2O3ORLU+DYZfStlQD7p56pIyTbulA2r9UozYgtw9SG/bMRzI92g7s0NtbIEQH/4iHkpkKMkXcTuhotr4ECHGJzebyTck/5/ORFQb4yPkaYhp6FMsEDGSP1AIIXka+VwbsZzR9noIz7xFIYTk2uTzpf1lxKMN/Kjvmndy7YrzpdI571/9VSSlubrEsu6hEEJy3tL7Fm99QuoT//THcsc1VbxvIb33pJUQFJbKEmodpRBA+T3g/rtT22qoWWlge8DS+/gga0FUI3QSp6r38aVrMQiLT4s5Cbet8wBxQlgthnQ9DemRkWcbyFTcKwYhLLcgXRN1Ih7p9oNOsnip6/ELEwJrouTr2kj/vueZFmQqzv+DQAgt15euTaSku73OIFwcKC/S/XthQmieXbq+lNr7Z3W1GeuMAmh1/wVECcH1pdI1woS/coHIP+xXe+VTY9Qbv0eUEH4IUbrOm/9YbvcTChOC67zla/UL3m4c3s3DRQnhtfry5y0ggegwgighx26Q/JkZ6PboRc47BiFPkxP5c09A23tR38cQJOQ594Rwdo1n66Lv1IkRcp1dwzh/CN/lJkaMGCHX+UOUM6TQIwbNe/8vxQj5GvBhnAOOW9BPtQSgGCHnOWCcs9yQf1Wa7RUi5O1NxzqPD6z6Yk0Nl3oXjxAhd2s6xnY+sHKvvm80XLzKPe6eCizPDVxf+jm8GeQN/Y0IIX9fDEaAAa+gPdKCpS9ZzWAuQYBQoLcJY/+Cpwo6olxJZSV3ciUChCKdou73GOKs1f+d+Knnnj+m63ppvrzfoX/Z/+pMQqEeQ/f7RIW75a2YeeQ4qs9/s6sjZgrh0Hv2khkJiPUvf/xeXxPqFCXadO/xe+5N5iOKN2l9/N6Xj9+/9Al60D5BH+EJLDaSvaCfoJ/34/dkf4K++k9wN8Lj32/xBHeUPME9M09wV5CZUxHzviczXXDkq3Mf/t418/qXo9+d9wT3Hz7+HZbPcA/p498l+/L49wEbMlCV3ulsQiil9l7ul8e/W/3LLuo1/TsVdrAvnQ4cuqtGl6Mr0oiRne1h5XqW1BI1XLovS0fUv0YMeAHKxh6pMVpOBqp8XMsYjThCr/LGTBVvVJt5uvKx9jRCDR/wIotad4etE6XgaDwF6rdQK8n9QWk5alecaDQjPywrUVeUstc6QL+VqtooToTrZNBl7fCX1XBnxve7Kk1w15zKoO93ldfA+qBBtG30WHim8g3GYA032gw8QEFmn6TwTnam2/6x5AaZ+IysMqJrtJlym7rivfGxqOpmGnT/5LUrG9ZT66yDvWoNXVvuyfXShl3+vSiXTepN6uv15QZNYq+Phyrcx0Wx3W6LIt6H1eFY2kkzkWkHkpUGvt+2juO0re8HqVkOy6xZs2bNmjVr1qxZs2bNenj9D2N5riQw7jWDAAAAAElFTkSuQmCC" type="image/x-icon" />
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/component-custom-switch.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/guages.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Slider -->
+    <link href="/css/slider/freshslider.min.css" rel="stylesheet">
+
+    <script src="/js/jquery.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <link href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" rel="stylesheet"/>
+
+    <style>
+    body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
+
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 0; /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ */
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* 1 */
+    height: 40px;
+    background: #fff;
+    box-shadow: -100vw 0 0 100vw dodgerblue;
+    border: 2px solid #999; /* 1 */
+}
+
+::-moz-range-track {
+    height: 40px;
+    background: #ddd;
+}
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 40px;
+    width: 20px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -100vw 0 0 100vw dodgerblue;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: dodgerblue;
+}
+
+::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+        
+        .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        input:checked + .slider {
+          background-color: #2196F3;
+        }
+        
+        input:focus + .slider {
+          box-shadow: 0 0 1px #2196F3;
+        }
+        
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+
+
+        
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+        
+        .slider.round:before {
+          border-radius: 50%;
+        }
+.form-switch {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.form-switch i {
+  position: relative;
+  display: inline-block;
+ margin-right: .5rem;
+  width: 46px;
+  height: 26px;
+  background-color: #e6e6e6;
+  border-radius: 23px;
+  vertical-align: text-bottom;
+  transition: all 0.3s linear;
+}
+
+.form-switch i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 42px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+  transition: all 0.25s linear;
+}
+
+.form-switch i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+  transform: translate3d(2px, 2px, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-switch:active i::after {
+  width: 28px;
+  transform: translate3d(2px, 2px, 0);
+}
+
+.form-switch:active input:checked + i::after { transform: translate3d(16px, 2px, 0); }
+
+.form-switch input { display: none; }
+
+.form-switch input:checked + i { background-color: #4BD763; }
+
+.form-switch input:checked + i::before { transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0); }
+
+.form-switch input:checked + i::after { transform: translate3d(22px, 2px, 0); }
+        </style>
+
+<script>
+    window.onload = function () {
+    
+    var dps = [];
+    var dps1 = [];
+    var dps2 = [];
+    var dps3 = [];// dataPoints
+    var r2dps = [];
+    var r2dps1 = [];
+    var r2dps2 = [];
+    var r2dps3 = [];
+    var r3dps = [];
+    var r3dps1 = [];
+    var r3dps2 = [];
+    var r3dps3 = [];
+    var r4dps = [];
+    var r4dps1 = [];
+    var r4dps2 = [];
+    var r4dps3 = [];
+    var chart = new CanvasJS.Chart("charttemp", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Temperature"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [{
+            type: "line",
+            dataPoints: dps,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Temp",
+            color: "#DC143C"}
+        // },
+        // {
+        //     type: "line",
+        //     dataPoints: dps1,
+        //     xValueType: "dateTime",
+        //     xValueFormatString: "hh:mm:ss TT",
+        //     name: "Hum",
+        //     color: "#6495ED"
+        // },
+        // {
+        //     type: "line",
+        //     dataPoints: dps2,
+        //     xValueType: "dateTime",
+        //     xValueFormatString: "hh:mm:ss TT",
+        //     name: "Light",
+        //     color: "#FF8C00"
+        // },
+        // {
+        //     type: "line",
+        //     dataPoints: dps3,
+        //     xValueType: "dateTime",
+        //     xValueFormatString: "hh:mm:ss TT",
+        //     name: "Dust",
+        //     color: "#696969"
+        // }
+        ]
+    });
+
+    var chart1 = new CanvasJS.Chart("charthum", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Humidity"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: dps1,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Hum",
+            color: "#6495ED"
+        }]
+    });
+
+    var chart2 = new CanvasJS.Chart("chartlight", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Light"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: dps2,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Light",
+            color: "#FF8C00"
+        }]
+    });
+
+    var chart3 = new CanvasJS.Chart("chartdust", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Dust"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: dps3,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Dust",
+            color: "#696969"
+        }]
+    });
+    
+    var r2chart = new CanvasJS.Chart("charttemp2", {
+        animationEnabled: true, 
+		animationDuration: 2000,
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Temperature"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [{
+            type: "line",
+            dataPoints: r2dps,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Temp",
+            color: "#DC143C"
+        }]
+    });
+
+    var r2chart1 = new CanvasJS.Chart("charthum2", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Humidity"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r2dps1,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Hum",
+            color: "#6495ED"
+        }]
+    });
+
+    var r2chart2 = new CanvasJS.Chart("chartlight2", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Light"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r2dps2,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Light",
+            color: "#FF8C00"
+        }]
+    });
+
+    var r2chart3 = new CanvasJS.Chart("chartdust2", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Dust"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r2dps3,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Dust",
+            color: "#696969"
+        }]
+    });
+    var r3chart = new CanvasJS.Chart("charttemp3", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Temperature"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [{
+            type: "line",
+            dataPoints: r3dps,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Temp",
+            color: "#DC143C"
+        }]
+    });
+
+    var r3chart1 = new CanvasJS.Chart("charthum3", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Humidity"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r3dps1,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Hum",
+            color: "#6495ED"
+        }]
+    });
+
+    var r3chart2 = new CanvasJS.Chart("chartlight3", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Light"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r3dps2,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Light",
+            color: "#FF8C00"
+        }]
+    });
+
+    var r3chart3 = new CanvasJS.Chart("chartdust3", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Dust"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r3dps3,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Dust",
+            color: "#696969"
+        }]
+    });
+
+    var r4chart = new CanvasJS.Chart("charttemp4", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Temperature"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [{
+            type: "line",
+            dataPoints: r4dps,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Temp",
+            color: "#DC143C"
+        }]
+    });
+
+    var r4chart1 = new CanvasJS.Chart("charthum4", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Humidity"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r4dps1,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Hum",
+            color: "#6495ED"
+        }]
+    });
+
+    var r4chart2 = new CanvasJS.Chart("chartlight4", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Light"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r4dps2,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Light",
+            color: "#FF8C00"
+        }]
+    });
+
+    var r4chart3 = new CanvasJS.Chart("chartdust4", {
+        backgroundColor: "#ECF0F5",
+        theme: "light2",
+        title :{
+            text: "Dust"
+        },
+        axisY: {
+            includeZero: false
+        },
+          toolTip: {
+            shared: true
+        },
+        data: [
+        {
+            type: "line",
+            dataPoints: r4dps3,
+            xValueType: "dateTime",
+            xValueFormatString: "hh:mm:ss TT",
+            name: "Dust",
+            color: "#696969"
+        }]
+    });
+    var updateInterval = 1000;
+    var dataLength = 10; // number of dataPoints visible at any point
+    var time = new Date;
+    
+    setInterval(function(){ 
+        $.getJSON( "/api/room1?token="+token, function( a ) {
+            //time.setTime(time.getTime()+ 1000);
+            dps.push({
+                x: time.getTime(),
+                y: a.result.temp
+            });
+            dps1.push({
+                x: time.getTime(),
+                y: a.result.hum
+            });
+            dps2.push({
+                x: time.getTime(),
+                y: a.result.light
+            });
+            dps3.push({
+                x: time.getTime(),
+                y: a.result.dust
+            });
+    
+        // if (dps.length > dataLength) {
+        //     dps.shift();
+        // }
+        //   if (dps1.length > dataLength) {
+        //     dps1.shift();
+        // }
+        // if (dps2.length > dataLength) {
+        //     dps2.shift();
+        // }
+        // if (dps3.length > dataLength) {
+        //     dps3.shift();
+        // }
+    
+        chart.render();
+        chart1.render();
+        chart2.render();
+        chart3.render();
+        });
+        $.getJSON( "/api/room2?token="+token, function( a ) {
+            time.setTime(time.getTime()+ 1000);
+            r2dps.push({
+                x: time.getTime(),
+                y: a.result.temp
+            });
+            r2dps1.push({
+                x: time.getTime(),
+                y: a.result.hum
+            });
+            r2dps2.push({
+                x: time.getTime(),
+                y: a.result.light
+            });
+            r2dps3.push({
+                x: time.getTime(),
+                y: a.result.dust
+            });
+    
+        // if (dps.length > dataLength) {
+        //     dps.shift();
+        // }
+        //   if (dps1.length > dataLength) {
+        //     dps1.shift();
+        // }
+        // if (dps2.length > dataLength) {
+        //     dps2.shift();
+        // }
+        // if (dps3.length > dataLength) {
+        //     dps3.shift();
+        // }
+    
+        r2chart.render();
+        r2chart1.render();
+        r2chart2.render();
+        r2chart3.render();
+        });
+
+        $.getJSON( "/api/room3?token="+token, function( a ) {
+            time.setTime(time.getTime()+ 1000);
+            r3dps.push({
+                x: time.getTime(),
+                y: a.result.temp
+            });
+            r3dps1.push({
+                x: time.getTime(),
+                y: a.result.hum
+            });
+            r3dps2.push({
+                x: time.getTime(),
+                y: a.result.light
+            });
+            r3dps3.push({
+                x: time.getTime(),
+                y: a.result.dust
+            });
+    
+        // if (dps.length > dataLength) {
+        //     dps.shift();
+        // }
+        //   if (dps1.length > dataLength) {
+        //     dps1.shift();
+        // }
+        // if (dps2.length > dataLength) {
+        //     dps2.shift();
+        // }
+        // if (dps3.length > dataLength) {
+        //     dps3.shift();
+        // }
+    
+        r3chart.render();
+        r3chart1.render();
+        r3chart2.render();
+        r3chart3.render();
+        });
+        $.getJSON( "/api/room4?token="+token, function( a ) {
+            time.setTime(time.getTime()+ 1000);
+            r4dps.push({
+                x: time.getTime(),
+                y: a.result.temp
+            });
+            r4dps1.push({
+                x: time.getTime(),
+                y: a.result.hum
+            });
+            r4dps2.push({
+                x: time.getTime(),
+                y: a.result.light
+            });
+            r4dps3.push({
+                x: time.getTime(),
+                y: a.result.dust
+            });
+    
+        // if (dps.length > dataLength) {
+        //     dps.shift();
+        // }
+        //   if (dps1.length > dataLength) {
+        //     dps1.shift();
+        // }
+        // if (dps2.length > dataLength) {
+        //     dps2.shift();
+        // }
+        // if (dps3.length > dataLength) {
+        //     dps3.shift();
+        // }
+    
+        r4chart.render();
+        r4chart1.render();
+        r4chart2.render();
+        r4chart3.render();
+        });
+    }, 1000);
+    
+    // updateChart(dataLength);
+    // setInterval(function(){updateChart()}, updateInterval);
+    
+    }
+    </script>
+    <script>
+        var token;
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand pull-left " href="#" id="menu-toggle"><span class="glyphicon glyphicon-chevron-left soft-white"></span></a>
+                <a class="navbar-brand pull-left" id='space' href="#">VU TUAN ANH</a>
+
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="header-user" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp; Administrator <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" id="logout-submit">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Sidebar -->
+    <!-- <div id="login-form" class="login-form" style="width: 200px; height: 100px; position: absolute; top: 300px; left: 50%; transform: translateX(-50%);">
+        <div id="login-message"></div>
+        <label for="username">Username</label>
+        <input id="username" type="text">
+        <label for="password">Password</label>
+        <input id="password" type="password">
+        <button id="login-submit">Login</button>
+    </div> -->
+    <div id="login-form">
+        <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Wireless</div>
+            <div><span>Sensor</span></div>
+            <div>Network</div>
+		</div>
+        <br>
+        
+		<div class="login">
+				<input id="username" type="text" placeholder="username" name="user"><br>
+				<input id="password" type="password" placeholder="password" name="password"><br>
+                <input id="login-submit" type="button" value="Login">
+                <br>
+                <div id="login-message" style="color: #fff;font-size: 25px;"></div>
+		</div>
+    </div>
+    <div id="sidebar-wrapper">
+        
+        <ul class="sidebar-nav">
+            <li id="li-1">
+                <a onClick="openTab(1);" href="#"><span class="glyphicon glyphicon-modal-window"></span>&nbsp; Room 1</a>
+            </li>
+            <li id="li-2">
+                <a onClick="openTab(2);" href="#"><span class="glyphicon glyphicon-modal-window"></span>&nbsp; Room 2</a>
+            </li>
+            <li id="li-3">
+                <a onClick="openTab(3);" href="#"><span class="glyphicon glyphicon-modal-window"></span>&nbsp; Room 3</a>
+            </li>
+            <li id="li-4" class="active">
+                <a onClick="openTab(4);" href="#"><span class="glyphicon glyphicon-modal-window"></span>&nbsp; Room 4</a>
+            </li>
+            <li id="li-5" class="active">
+                <a onClick="openTab(5);" href="#"><span class="glyphicon glyphicon-map-marker"></span>&nbsp; Location</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div id="tab1" class="container-fluid">
+            <h1 style="font-size:30px; color:gray;">ROOM 1</h1>
+            <div style = "margin-left:30px;border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:900px; height: 100px; border-radius: 20px 20px 20px 20px;display: flex;align-items: center;justify-content: center;">
+                <p style="margin-left:20px;">LED 1</p>
+                <label class="switch" style = "margin-left: 10px;">
+                  <input id="check-led1" type="checkbox" checked>
+                  <span class="slider round"></span>
+                    <script>
+                        $('#check-led1').click(function() {
+                            var led1 = $(this).prop('checked');
+                            if (led1) led1 = 1;
+                            else led1 = 0;
+                            $.post( "/api/led1", { signal: led1, token: token })
+                            .done(function( data ) {
+        
+                            });
+                        });
+                    </script>
+                </label>
+                <input id="control-led1" style="margin-left:20px; margin-right:100px;" type="range" min="0" max="255">
+                <script>
+                    $('#control-led1').on('change', function() {
+                        var led1 = $(this).val();
+                        $.post( "/api/controlled1", { pwm: led1 , token: token})
+                            .done(function( data ) {
+        
+                            });
+                        console.log(led1)
+                    });
+                </script>
+                
+                <p style = "margin-left: 30px;">LED 2</p>
+                <label class="switch" style = "margin-left: 10px;">
+                  <input id="check-led2" type="checkbox" checked>
+                  <span class="slider round"></span>
+                  <script>
+                        $('#check-led2').click(function() {
+                            var led2 = $(this).prop('checked');
+                            if (led2) led2 = 1;
+                            else led2 = 0;
+                            $.post( "/api/led2", { signal: led2, token: token }) 
+                            .done(function( data ) {
+
+                            });
+                        });
+                    </script>
+                </label>
+                <input id="control-led2" style="margin-left:20px; margin-right:20px;" type="range" min="0" max="255">
+                <script>
+                    $('#control-led2').on('change', function() {
+                        var led2 = $(this).val();
+                        $.post( "/api/controlled2", { pwm: led2 , token: token})
+                            .done(function( data ) {
+        
+                            });
+                        console.log(led2)
+                    });
+                </script>
+            </div>
+            <hr class="style-four">
+            <div class = "sensor-data">
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:450px; height: 150px; border-radius: 20px 20px 20px 20px; margin-left:20px;">
+                    <div id="temp1" class="temp" style='background: #DC143C;'>
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-thermometer-three-quarters"></span>&nbsp;
+                        <span id="sensor-temp"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                        <h4 style="color:#DC143C;">Temperature<small id="stttemp1" class="pull-right" style="color:#DC143C;"><span id="stt-temp"></span></small></h4>
+                        <table class="table table-condensed">
+                            <tbody>
+                            <tr>
+                                <td>Max</td>
+                                <td><span id="maxtemp"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Min</td>
+                                <td><span id="mintemp"></span></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Average</td>
+                                <td><span id="avgtemp"></span></td>
+                                <td>Today</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; margin: 30px; width:450px; height: 150px; border-radius: 20px 20px 20px 20px;">
+                    <div id="hum1" class="hum" style="background: #6495ED;">
+                    <p style="font-size:50px; color:White; float:left;">
+                        <span class="fas fa-tint"></span>&nbsp;
+                        <span id="sensor-hum"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#6495ED;">Humidity<small id="stthum1" class="pull-right" style="color:#6495ED;"><span id="stt-hum"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxhum"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="minhum"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avghum"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <div class="sensor-data">
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:450px; height: 150px; border-radius: 20px 20px 20px 20px; margin-left:20px;">
+                    <div id="light1" class='light' style="background: #FF8C00;">
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-sun"></span>&nbsp;
+                        <span id="sensor-light"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#FF8C00;">Light<small id="sttlight1" class="pull-right" style="color:#FF8C00;"><span id="stt-light"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxlight"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="minlight"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avglight"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; margin: 30px; width:450px; height: 150px; border-radius: 20px 20px 20px 20px;">
+                    <div id="dust1" class='dust' style='background: #696969;'>
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-braille"></span>&nbsp;
+                        <span id="sensor-dust"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#696969;">Dust<small id="sttdust1" class="pull-right" style="color:#696969;"><span id="stt-dust"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxdust"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="mindust"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avgdust"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <hr class="style-four">
+            <div style = "display: flex;align-items: center;justify-content: center;">
+                <div id="charttemp" style="height: 200px; width: 450px; float: left;"></div>
+                <div id="charthum" style="height: 200px; width: 450px; margin-left:10px;"></div>
+            </div>
+            <br>
+            <div style = "display: flex;align-items: center;justify-content: center;">
+                <div id="chartlight" style="height: 200px; width: 450px; float: left;"></div>
+                <div id="chartdust" style="height: 200px; width: 450px;"></div>
+            </div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <hr class="style-four">
+            <footer class="footer">    
+                  <p class="text-muted pull-left">Mang cam bien 2019</p>
+                  <p class="text-muted pull-right">Designed by <a href="">Vu Tuan Anh</a></p>
+            </footer>     
+        </div>
+        <script>
+            setInterval(function(){ 
+                
+                $.getJSON( "/api/room1?token="+token, function( a ) {
+                    var temp = document.getElementById('temp1');
+                    var stttemp = document.getElementById('stttemp1');
+                    var hum = document.getElementById('hum1');
+                    var stthum = document.getElementById('stthum1');
+                    var light = document.getElementById('light1');
+                    var sttlight = document.getElementById('sttlight1');
+                    var dust = document.getElementById('dust1');
+                    var sttdust = document.getElementById('sttdust1');
+                    if(a.result.temp <= 20){
+                        temp.style.background = "#2E9AFE";
+                        stttemp.style.color = "#2E9AFE";
+                    }
+                    if(a.result.temp > 20 && a.result.temp <= 30){
+                        temp.style.background = "#DC143C";
+                        stttemp.style.color = "#DC143C";
+                    }
+                    if(a.result.temp > 30){
+                        temp.style.background = "#FF4000";
+                        stttemp.style.color = "#FF4000";
+                    }
+                    if(a.result.hum <= 40){
+                        hum.style.background = "#2E9AFE";
+                        stthum.style.color = "#2E9AFE";
+                    }
+                    if(a.result.hum > 40 && a.result.hum <= 80){
+                        hum.style.background = "#6495ED";
+                        stthum.style.color = "#6495ED";
+                    }
+                    if(a.result.hum > 80){
+                        hum.style.background = "#084B8A";
+                        stthum.style.color = "#084B8A";
+                    }
+                    if(a.result.light <= 200){
+                        light.style.background = "#FE9A2E";
+                        sttlight.style.color = "#FE9A2E";
+                    }
+                    if(a.result.light > 200 && a.result.light <= 600){
+                        light.style.background = "#DF7401";
+                        sttlight.style.color = "#DF7401";
+                    }
+                    if(a.result.light > 600){
+                        light.style.background = "#8A4B08";
+                        sttlight.style.color = "#8A4B08";
+                    }
+                    if(a.result.dust <= 20){
+                        dust.style.background = "#696969";
+                        sttdust.style.color = "#696969";
+                    }
+                    if(a.result.dust > 20 && a.result.dust <= 40){
+                        dust.style.background = "#2E2E2E";
+                        sttdust.style.color = "#2E2E2E";
+                    }
+                    if(a.result.dust > 40){
+                        dust.style.background = "#000000";
+                        sttdust.style.color = "#000000";
+                    }
+                    $('#stt-temp').text(a.result.stttemp);
+                    $('#stt-hum').text(a.result.stthum);
+                    $('#stt-light').text(a.result.sttlight);
+                    $('#stt-dust').text(a.result.sttdust);
+                    $('#sensor-light').text(a.result.light);
+                    $('#sensor-temp').text(a.result.temp);
+                    $('#sensor-hum').text(a.result.hum);
+                    $('#sensor-dust').text(a.result.dust);
+                    $('#maxtemp').text(a.maxtemp.temp);
+                    $('#mintemp').text(a.mintemp.temp);
+                    $('#avgtemp').text(a.avgtemp.avgtemp);
+                    $('#maxhum').text(a.maxhum.hum);
+                    $('#minhum').text(a.minhum.hum);
+                    $('#avghum').text(a.avghum.avghum);
+                    $('#maxlight').text(a.maxlight.light);
+                    $('#minlight').text(a.minlight.light);
+                    $('#avglight').text(a.avglight.avglight);
+                    $('#maxdust').text(a.maxdust.dust);
+                    $('#mindust').text(a.mindust.dust);
+                    $('#avgdust').text(a.avgdust.avgdust);
+
+                });
+            }, 500);
+           
+        </script>
+        <div id="tab2" class="container-fluid">
+            <h1 style="font-size:30px; color:gray;">ROOM 2</h1>
+            <div style = "margin-left:30px;border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:900px; height: 100px; border-radius: 20px 20px 20px 20px;display: flex;align-items: center;justify-content: center;">
+                <p style="margin-left:20px;">LED 1</p>
+                <label class="switch" style = "margin-left: 10px;">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                    <!-- <script>
+                        $('#check-led1').click(function() {
+                            var led1 = $(this).prop('checked');
+                            if (led1) led1 = 1;
+                            else led1 = 0;
+                            $.post( "/api/led1", { signal: led1, token: token })
+                            .done(function( data ) {
+        
+                            });
+                        });
+                    </script> -->
+                </label>
+                <input style="margin-left:20px; margin-right:100px;" type="range" min="0" max="255">
+                <!-- <script>
+                    $('#control-led1').on('change', function() {
+                        var led1 = $(this).val();
+                        $.post( "/api/controlled1", { pwm: led1 , token: token})
+                            .done(function( data ) {
+        
+                            });
+                        console.log(led1)
+                    });
+                </script> -->
+                
+                <p style = "margin-left: 30px;">LED 2</p>
+                <label class="switch" style = "margin-left: 10px;">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                  <!-- <script>
+                        $('#check-led2').click(function() {
+                            var led2 = $(this).prop('checked');
+                            if (led2) led2 = 1;
+                            else led2 = 0;
+                            $.post( "/api/led2", { signal: led2, token: token }) 
+                            .done(function( data ) {
+
+                            });
+                        });
+                    </script> -->
+                </label>
+                <input style="margin-left:20px; margin-right:20px;" type="range" min="0" max="255">
+                <!-- <script>
+                    $('#control-led2').on('change', function() {
+                        var led2 = $(this).val();
+                        $.post( "/api/controlled2", { pwm: led2 , token: token})
+                            .done(function( data ) {
+        
+                            });
+                        console.log(led2)
+                    });
+                </script> -->
+            </div>
+            <hr class="style-four">
+            <div class = "sensor-data">
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:450px; height: 150px; border-radius: 20px 20px 20px 20px; margin-left:20px;">
+                    <div id="temp2" class="temp" style='background: #DC143C;'>
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-thermometer-three-quarters"></span>&nbsp;
+                        <span id="sensor-temp2"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                        <h4 style="color:#DC143C;">Temperature<small id="stttemp2" class="pull-right" style="color:#DC143C;"><span id="stt-temp2"></span></small></h4>
+                        <table class="table table-condensed">
+                            <tbody>
+                            <tr>
+                                <td>Max</td>
+                                <td><span id="maxtemp2"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Min</td>
+                                <td><span id="mintemp2"></span></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Average</td>
+                                <td><span id="avgtemp2"></span></td>
+                                <td>Today</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; margin: 30px; width:450px; height: 150px; border-radius: 20px 20px 20px 20px;">
+                    <div id="hum2" class="hum" style="background: #6495ED;">
+                    <p style="font-size:50px; color:White; float:left;">
+                        <span class="fas fa-tint"></span>&nbsp;
+                        <span id="sensor-hum2"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#6495ED;">Humidity<small id="stthum2" class="pull-right" style="color:#6495ED;"><span id="stt-hum2"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxhum2"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="minhum2"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avghum2"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <div class="sensor-data">
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:450px; height: 150px; border-radius: 20px 20px 20px 20px; margin-left:20px;">
+                    <div id="light2" class='light' style="background: #FF8C00;">
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-sun"></span>&nbsp;
+                        <span id="sensor-light2"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#FF8C00;">Light<small id="sttlight2" class="pull-right" style="color:#FF8C00;"><span id="stt-light2"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxlight2"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="minlight2"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avglight2"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; margin: 30px; width:450px; height: 150px; border-radius: 20px 20px 20px 20px;">
+                    <div id="dust2" class='dust' style='background: #696969;'>
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-braille"></span>&nbsp;
+                        <span id="sensor-dust2"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#696969;">Dust<small id="sttdust2" class="pull-right" style="color:#696969;"><span id="stt-dust2"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxdust2"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="mindust2"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avgdust2"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <hr class="style-four">
+            <div style = "display: flex;align-items: center;justify-content: center;">
+                <div id="charttemp2" style="height: 200px; width: 450px; float: left;"></div>
+                <div id="charthum2" style="height: 200px; width: 450px; margin-left:10px;"></div>
+            </div>
+            <br>
+            <div style = "display: flex;align-items: center;justify-content: center;">
+                <div id="chartlight2" style="height: 200px; width: 450px; float: left;"></div>
+                <div id="chartdust2" style="height: 200px; width: 450px;"></div>
+            </div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <hr class="style-four">
+            <footer class="footer">    
+                  <p class="text-muted pull-left">Mang cam bien 2019</p>
+                  <p class="text-muted pull-right">Designed by <a href="">Vu Tuan Anh</a></p>
+            </footer>     
+        </div>
+        <script>
+            setInterval(function(){ 
+                
+                $.getJSON( "/api/room2?token="+token, function( a ) {
+                    var temp = document.getElementById('temp2');
+                    var stttemp = document.getElementById('stttemp2');
+                    var hum = document.getElementById('hum2');
+                    var stthum = document.getElementById('stthum2');
+                    var light = document.getElementById('light2');
+                    var sttlight = document.getElementById('sttlight2');
+                    var dust = document.getElementById('dust2');
+                    var sttdust = document.getElementById('sttdust2');
+                    if(a.result.temp <= 20){
+                        temp.style.background = "#2E9AFE";
+                        stttemp.style.color = "#2E9AFE";
+                    }
+                    if(a.result.temp > 20 && a.result.temp <= 30){
+                        temp.style.background = "#DC143C";
+                        stttemp.style.color = "#DC143C";
+                    }
+                    if(a.result.temp > 30){
+                        temp.style.background = "#FF4000";
+                        stttemp.style.color = "#FF4000";
+                    }
+                    if(a.result.hum <= 40){
+                        hum.style.background = "#2E9AFE";
+                        stthum.style.color = "#2E9AFE";
+                    }
+                    if(a.result.hum > 40 && a.result.hum <= 80){
+                        hum.style.background = "#6495ED";
+                        stthum.style.color = "#6495ED";
+                    }
+                    if(a.result.hum > 80){
+                        hum.style.background = "#084B8A";
+                        stthum.style.color = "#084B8A";
+                    }
+                    if(a.result.light <= 200){
+                        light.style.background = "#FE9A2E";
+                        sttlight.style.color = "#FE9A2E";
+                    }
+                    if(a.result.light > 200 && a.result.light <= 600){
+                        light.style.background = "#DF7401";
+                        sttlight.style.color = "#DF7401";
+                    }
+                    if(a.result.light > 600){
+                        light.style.background = "#8A4B08";
+                        sttlight.style.color = "#8A4B08";
+                    }
+                    if(a.result.dust <= 20){
+                        dust.style.background = "#696969";
+                        sttdust.style.color = "#696969";
+                    }
+                    if(a.result.dust > 20 && a.result.dust <= 40){
+                        dust.style.background = "#2E2E2E";
+                        sttdust.style.color = "#2E2E2E";
+                    }
+                    if(a.result.dust > 40){
+                        dust.style.background = "#000000";
+                        sttdust.style.color = "#000000";
+                    }
+                    $('#stt-temp2').text(a.result.stttemp);
+                    $('#stt-hum2').text(a.result.stthum);
+                    $('#stt-light2').text(a.result.sttlight);
+                    $('#stt-dust2').text(a.result.sttdust);
+                    $('#sensor-light2').text(a.result.light);
+                    $('#sensor-temp2').text(a.result.temp);
+                    $('#sensor-hum2').text(a.result.hum);
+                    $('#sensor-dust2').text(a.result.dust);
+                    $('#maxtemp2').text(a.maxtemp.temp);
+                    $('#mintemp2').text(a.mintemp.temp);
+                    $('#avgtemp2').text(a.avgtemp.avgtemp);
+                    $('#maxhum2').text(a.maxhum.hum);
+                    $('#minhum2').text(a.minhum.hum);
+                    $('#avghum2').text(a.avghum.avghum);
+                    $('#maxlight2').text(a.maxlight.light);
+                    $('#minlight2').text(a.minlight.light);
+                    $('#avglight2').text(a.avglight.avglight);
+                    $('#maxdust2').text(a.maxdust.dust);
+                    $('#mindust2').text(a.mindust.dust);
+                    $('#avgdust2').text(a.avgdust.avgdust);
+
+                });
+            }, 500);
+        </script>
+        <div id="tab3" class="container-fluid">
+            <h1 style="font-size:30px; color:gray;">ROOM 3</h1>
+            <div style = "margin-left:30px;border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:900px; height: 100px; border-radius: 20px 20px 20px 20px;display: flex;align-items: center;justify-content: center;">
+                <p style="margin-left:20px;">LED 1</p>
+                <label class="switch" style = "margin-left: 10px;">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                    <!-- <script>
+                        $('#check-led1').click(function() {
+                            var led1 = $(this).prop('checked');
+                            if (led1) led1 = 1;
+                            else led1 = 0;
+                            $.post( "/api/led1", { signal: led1, token: token })
+                            .done(function( data ) {
+        
+                            });
+                        });
+                    </script> -->
+                </label>
+                <input style="margin-left:20px; margin-right:100px;" type="range" min="0" max="255">
+                <!-- <script>
+                    $('#control-led1').on('change', function() {
+                        var led1 = $(this).val();
+                        $.post( "/api/controlled1", { pwm: led1 , token: token})
+                            .done(function( data ) {
+        
+                            });
+                        console.log(led1)
+                    });
+                </script> -->
+                
+                <p style = "margin-left: 30px;">LED 2</p>
+                <label class="switch" style = "margin-left: 10px;">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                  <!-- <script>
+                        $('#check-led2').click(function() {
+                            var led2 = $(this).prop('checked');
+                            if (led2) led2 = 1;
+                            else led2 = 0;
+                            $.post( "/api/led2", { signal: led2, token: token }) 
+                            .done(function( data ) {
+
+                            });
+                        });
+                    </script> -->
+                </label>
+                <input style="margin-left:20px; margin-right:20px;" type="range" min="0" max="255">
+                <!-- <script>
+                    $('#control-led2').on('change', function() {
+                        var led2 = $(this).val();
+                        $.post( "/api/controlled2", { pwm: led2 , token: token})
+                            .done(function( data ) {
+        
+                            });
+                        console.log(led2)
+                    });
+                </script> -->
+            </div>
+            <hr class="style-four">
+            <div class = "sensor-data">
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:450px; height: 150px; border-radius: 20px 20px 20px 20px; margin-left:20px;">
+                    <div id="temp3" class="temp" style='background: #DC143C;'>
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-thermometer-three-quarters"></span>&nbsp;
+                        <span id="sensor-temp3"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                        <h4 style="color:#DC143C;">Temperature<small id="stttemp3" class="pull-right" style="color:#DC143C;"><span id="stt-temp3"></span></small></h4>
+                        <table class="table table-condensed">
+                            <tbody>
+                            <tr>
+                                <td>Max</td>
+                                <td><span id="maxtemp3"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Min</td>
+                                <td><span id="mintemp3"></span></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Average</td>
+                                <td><span id="avgtemp3"></span></td>
+                                <td>Today</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; margin: 30px; width:450px; height: 150px; border-radius: 20px 20px 20px 20px;">
+                    <div id="hum3" class="hum" style="background: #6495ED;">
+                    <p style="font-size:50px; color:White; float:left;">
+                        <span class="fas fa-tint"></span>&nbsp;
+                        <span id="sensor-hum3"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#6495ED;">Humidity<small id="stthum3" class="pull-right" style="color:#6495ED;"><span id="stt-hum3"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxhum3"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="minhum3"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avghum3"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <div class="sensor-data">
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:450px; height: 150px; border-radius: 20px 20px 20px 20px; margin-left:20px;">
+                    <div id="light3" class='light' style="background: #FF8C00;">
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-sun"></span>&nbsp;
+                        <span id="sensor-light3"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#FF8C00;">Light<small id="sttlight3" class="pull-right" style="color:#FF8C00;"><span id="stt-light3"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxlight3"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="minlight3"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avglight3"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; margin: 30px; width:450px; height: 150px; border-radius: 20px 20px 20px 20px;">
+                    <div id="dust3" class='dust' style='background: #696969;'>
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-braille"></span>&nbsp;
+                        <span id="sensor-dust3"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#696969;">Dust<small id="sttdust3" class="pull-right" style="color:#696969;"><span id="stt-dust3"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxdust3"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="mindust3"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avgdust3"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <hr class="style-four">
+            <div style = "display: flex;align-items: center;justify-content: center;">
+                <div id="charttemp3" style="height: 200px; width: 450px; float: left;"></div>
+                <div id="charthum3" style="height: 200px; width: 450px; margin-left:10px;"></div>
+            </div>
+            <br>
+            <div style = "display: flex;align-items: center;justify-content: center;">
+                <div id="chartlight3" style="height: 200px; width: 450px; float: left;"></div>
+                <div id="chartdust3" style="height: 200px; width: 450px;"></div>
+            </div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <hr class="style-four">
+            <footer class="footer">    
+                  <p class="text-muted pull-left">Mang cam bien 2019</p>
+                  <p class="text-muted pull-right">Designed by <a href="">Vu Tuan Anh</a></p>
+            </footer>     
+        </div>
+        <script>
+            setInterval(function(){ 
+                
+                $.getJSON( "/api/room3?token="+token, function( a ) {
+                    var temp = document.getElementById('temp3');
+                    var stttemp = document.getElementById('stttemp3');
+                    var hum = document.getElementById('hum3');
+                    var stthum = document.getElementById('stthum3');
+                    var light = document.getElementById('light3');
+                    var sttlight = document.getElementById('sttlight3');
+                    var dust = document.getElementById('dust3');
+                    var sttdust = document.getElementById('sttdust3');
+                    if(a.result.temp <= 20){
+                        temp.style.background = "#2E9AFE";
+                        stttemp.style.color = "#2E9AFE";
+                    }
+                    if(a.result.temp > 20 && a.result.temp <= 30){
+                        temp.style.background = "#DC143C";
+                        stttemp.style.color = "#DC143C";
+                    }
+                    if(a.result.temp > 30){
+                        temp.style.background = "#FF4000";
+                        stttemp.style.color = "#FF4000";
+                    }
+                    if(a.result.hum <= 40){
+                        hum.style.background = "#2E9AFE";
+                        stthum.style.color = "#2E9AFE";
+                    }
+                    if(a.result.hum > 40 && a.result.hum <= 80){
+                        hum.style.background = "#6495ED";
+                        stthum.style.color = "#6495ED";
+                    }
+                    if(a.result.hum > 80){
+                        hum.style.background = "#084B8A";
+                        stthum.style.color = "#084B8A";
+                    }
+                    if(a.result.light <= 200){
+                        light.style.background = "#FE9A2E";
+                        sttlight.style.color = "#FE9A2E";
+                    }
+                    if(a.result.light > 200 && a.result.light <= 600){
+                        light.style.background = "#DF7401";
+                        sttlight.style.color = "#DF7401";
+                    }
+                    if(a.result.light > 600){
+                        light.style.background = "#8A4B08";
+                        sttlight.style.color = "#8A4B08";
+                    }
+                    if(a.result.dust <= 20){
+                        dust.style.background = "#696969";
+                        sttdust.style.color = "#696969";
+                    }
+                    if(a.result.dust > 20 && a.result.dust <= 40){
+                        dust.style.background = "#2E2E2E";
+                        sttdust.style.color = "#2E2E2E";
+                    }
+                    if(a.result.dust > 40){
+                        dust.style.background = "#000000";
+                        sttdust.style.color = "#000000";
+                    }
+                    $('#stt-temp3').text(a.result.stttemp);
+                    $('#stt-hum3').text(a.result.stthum);
+                    $('#stt-light3').text(a.result.sttlight);
+                    $('#stt-dust3').text(a.result.sttdust);
+                    $('#sensor-light3').text(a.result.light);
+                    $('#sensor-temp3').text(a.result.temp);
+                    $('#sensor-hum3').text(a.result.hum);
+                    $('#sensor-dust3').text(a.result.dust);
+                    $('#maxtemp3').text(a.maxtemp.temp);
+                    $('#mintemp3').text(a.mintemp.temp);
+                    $('#avgtemp3').text(a.avgtemp.avgtemp);
+                    $('#maxhum3').text(a.maxhum.hum);
+                    $('#minhum3').text(a.minhum.hum);
+                    $('#avghum3').text(a.avghum.avghum);
+                    $('#maxlight3').text(a.maxlight.light);
+                    $('#minlight3').text(a.minlight.light);
+                    $('#avglight3').text(a.avglight.avglight);
+                    $('#maxdust3').text(a.maxdust.dust);
+                    $('#mindust3').text(a.mindust.dust);
+                    $('#avgdust3').text(a.avgdust.avgdust);
+
+                });
+            }, 500);
+        </script>
+        <div id="tab4" class="container-fluid">
+            <h1 style="font-size:30px; color:gray;">ROOM 4</h1>
+            <div style = "margin-left:30px;border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:900px; height: 100px; border-radius: 20px 20px 20px 20px;display: flex;align-items: center;justify-content: center;">
+                <p style="margin-left:20px;">LED 1</p>
+                <label class="switch" style = "margin-left: 10px;">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                    <!-- <script>
+                        $('#check-led1').click(function() {
+                            var led1 = $(this).prop('checked');
+                            if (led1) led1 = 1;
+                            else led1 = 0;
+                            $.post( "/api/led1", { signal: led1, token: token })
+                            .done(function( data ) {
+        
+                            });
+                        });
+                    </script> -->
+                </label>
+                <input style="margin-left:20px; margin-right:100px;" type="range" min="0" max="255">
+                <!-- <script>
+                    $('#control-led1').on('change', function() {
+                        var led1 = $(this).val();
+                        $.post( "/api/controlled1", { pwm: led1 , token: token})
+                            .done(function( data ) {
+        
+                            });
+                        console.log(led1)
+                    });
+                </script> -->
+                
+                <p style = "margin-left: 30px;">LED 2</p>
+                <label class="switch" style = "margin-left: 10px;">
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+                  <!-- <script>
+                        $('#check-led2').click(function() {
+                            var led2 = $(this).prop('checked');
+                            if (led2) led2 = 1;
+                            else led2 = 0;
+                            $.post( "/api/led2", { signal: led2, token: token }) 
+                            .done(function( data ) {
+
+                            });
+                        });
+                    </script> -->
+                </label>
+                <input style="margin-left:20px; margin-right:20px;" type="range" min="0" max="255">
+                <!-- <script>
+                    $('#control-led2').on('change', function() {
+                        var led2 = $(this).val();
+                        $.post( "/api/controlled2", { pwm: led2 , token: token})
+                            .done(function( data ) {
+        
+                            });
+                        console.log(led2)
+                    });
+                </script> -->
+            </div>
+            <hr class="style-four">
+            <div class = "sensor-data">
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:450px; height: 150px; border-radius: 20px 20px 20px 20px; margin-left:20px;">
+                    <div id="temp4" class="temp" style='background: #DC143C;'>
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-thermometer-three-quarters"></span>&nbsp;
+                        <span id="sensor-temp4"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                        <h4 style="color:#DC143C;">Temperature<small id="stttemp4" class="pull-right" style="color:#DC143C;"><span id="stt-temp4"></span></small></h4>
+                        <table class="table table-condensed">
+                            <tbody>
+                            <tr>
+                                <td>Max</td>
+                                <td><span id="maxtemp4"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Min</td>
+                                <td><span id="mintemp4"></span></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Average</td>
+                                <td><span id="avgtemp4"></span></td>
+                                <td>Today</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; margin: 30px; width:450px; height: 150px; border-radius: 20px 20px 20px 20px;">
+                    <div id="hum4" class="hum" style="background: #6495ED;">
+                    <p style="font-size:50px; color:White; float:left;">
+                        <span class="fas fa-tint"></span>&nbsp;
+                        <span id="sensor-hum4"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#6495ED;">Humidity<small id="stthum4" class="pull-right" style="color:#6495ED;"><span id="stt-hum4"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxhum4"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="minhum4"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avghum4"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <div class="sensor-data">
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; width:450px; height: 150px; border-radius: 20px 20px 20px 20px; margin-left:20px;">
+                    <div id="light4" class='light' style="background: #FF8C00;">
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-sun"></span>&nbsp;
+                        <span id="sensor-light4"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#FF8C00;">Light<small id="sttlight4" class="pull-right" style="color:#FF8C00;"><span id="stt-light4"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxlight4"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="minlight4"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avglight4"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div style="border: 1px solid rgba(57,86,118, 0.80); background: #ECF0F5; margin: 30px; width:450px; height: 150px; border-radius: 20px 20px 20px 20px;">
+                    <div id="dust4" class='dust' style='background: #696969;'>
+                    <p style="font-size:50px; color:white; float:left;">
+                        <span class="fas fa-braille"></span>&nbsp;
+                        <span id="sensor-dust4"></span>
+                    </p>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6" style="margin-left: 10px; margin-top:10px;">
+                            <h4 style="color:#696969;">Dust<small id="sttdust4" class="pull-right" style="color:#696969;"><span id="stt-dust4"></span></small></h4>
+                            <table class="table table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td><span id="maxdust4"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Min</td>
+                                    <td><span id="mindust4"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td><span id="avgdust4"></span></td>
+                                    <td>Today</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <hr class="style-four">
+            <div style = "display: flex;align-items: center;justify-content: center;">
+                <div id="charttemp4" style="height: 200px; width: 450px; float: left;"></div>
+                <div id="charthum4" style="height: 200px; width: 450px; margin-left:10px;"></div>
+            </div>
+            <br>
+            <div style = "display: flex;align-items: center;justify-content: center;">
+                <div id="chartlight4" style="height: 200px; width: 450px; float: left;"></div>
+                <div id="chartdust4" style="height: 200px; width: 450px;"></div>
+            </div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <hr class="style-four">
+            <footer class="footer">    
+                  <p class="text-muted pull-left">Mang cam bien 2019</p>
+                  <p class="text-muted pull-right">Designed by <a href="">Vu Tuan Anh</a></p>
+            </footer>     
+        </div>
+        <script>
+            setInterval(function(){ 
+                
+                $.getJSON( "/api/room2?token="+token, function( a ) {
+                    var temp = document.getElementById('temp4');
+                    var stttemp = document.getElementById('stttemp4');
+                    var hum = document.getElementById('hum4');
+                    var stthum = document.getElementById('stthum4');
+                    var light = document.getElementById('light4');
+                    var sttlight = document.getElementById('sttlight4');
+                    var dust = document.getElementById('dust4');
+                    var sttdust = document.getElementById('sttdust4');
+                    if(a.result.temp <= 20){
+                        temp.style.background = "#2E9AFE";
+                        stttemp.style.color = "#2E9AFE";
+                    }
+                    if(a.result.temp > 20 && a.result.temp <= 30){
+                        temp.style.background = "#DC143C";
+                        stttemp.style.color = "#DC143C";
+                    }
+                    if(a.result.temp > 30){
+                        temp.style.background = "#FF4000";
+                        stttemp.style.color = "#FF4000";
+                    }
+                    if(a.result.hum <= 40){
+                        hum.style.background = "#2E9AFE";
+                        stthum.style.color = "#2E9AFE";
+                    }
+                    if(a.result.hum > 40 && a.result.hum <= 80){
+                        hum.style.background = "#6495ED";
+                        stthum.style.color = "#6495ED";
+                    }
+                    if(a.result.hum > 80){
+                        hum.style.background = "#084B8A";
+                        stthum.style.color = "#084B8A";
+                    }
+                    if(a.result.light <= 200){
+                        light.style.background = "#FE9A2E";
+                        sttlight.style.color = "#FE9A2E";
+                    }
+                    if(a.result.light > 200 && a.result.light <= 600){
+                        light.style.background = "#DF7401";
+                        sttlight.style.color = "#DF7401";
+                    }
+                    if(a.result.light > 600){
+                        light.style.background = "#8A4B08";
+                        sttlight.style.color = "#8A4B08";
+                    }
+                    if(a.result.dust <= 20){
+                        dust.style.background = "#696969";
+                        sttdust.style.color = "#696969";
+                    }
+                    if(a.result.dust > 20 && a.result.dust <= 40){
+                        dust.style.background = "#2E2E2E";
+                        sttdust.style.color = "#2E2E2E";
+                    }
+                    if(a.result.dust > 40){
+                        dust.style.background = "#000000";
+                        sttdust.style.color = "#000000";
+                    }
+                    $('#stt-temp4').text(a.result.stttemp);
+                    $('#stt-hum4').text(a.result.stthum);
+                    $('#stt-light4').text(a.result.sttlight);
+                    $('#stt-dust4').text(a.result.sttdust);
+                    $('#sensor-light4').text(a.result.light);
+                    $('#sensor-temp4').text(a.result.temp);
+                    $('#sensor-hum4').text(a.result.hum);
+                    $('#sensor-dust4').text(a.result.dust);
+                    $('#maxtemp4').text(a.maxtemp.temp);
+                    $('#mintemp4').text(a.mintemp.temp);
+                    $('#avgtemp4').text(a.avgtemp.avgtemp);
+                    $('#maxhum4').text(a.maxhum.hum);
+                    $('#minhum4').text(a.minhum.hum);
+                    $('#avghum4').text(a.avghum.avghum);
+                    $('#maxlight4').text(a.maxlight.light);
+                    $('#minlight4').text(a.minlight.light);
+                    $('#avglight4').text(a.avglight.avglight);
+                    $('#maxdust4').text(a.maxdust.dust);
+                    $('#mindust4').text(a.mindust.dust);
+                    $('#avgdust4').text(a.avgdust.avgdust);
+
+                });
+            }, 500);
+        </script>
+        <div id="tab5" class="container-fluid">
+            <div id="osm-map"></div>
+            <hr class="style-four">
+            <footer class="footer">    
+                  <p class="text-muted pull-left">Mang cam bien 2019</p>
+                  <p class="text-muted pull-right">Designed by <a href="">Vu Tuan Anh</a></p>
+            </footer>
+        </div>
+        <script>
+            // setInterval(function(){ 
+                var a;
+                var b;
+                var target1;
+                target1 = L.latLng('20.98082','105.78716');
+                var element = document.getElementById('osm-map');
+                element.style = 'height:500px; width:970px;display: flex;align-items: center;justify-content: center;';
+                var map = L.map(element);
+                L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                $.getJSON( "/api/room1?token="+token, function( result ) {
+                    a = String(result.lat);
+                    b = String(result.lng); 
+                    target1 = L.latLng(a,b);
+                });
+                setTimeout(function() {
+                    // map.setView(target1, 16);
+                    //L.marker(target1,{title:'Room 1'}).addTo(map).bindPopup("Sensor1").openPopup();
+                }, 1000);
+
+                
+                var target2 = L.latLng('20.98045','105.78971');
+                var target3 = L.latLng('20.98148','105.79170');
+                var target4 = L.latLng('20.98270','105.78998');
+                
+                map.setView(target2, 16);
+                map.setView(target3, 16);
+                map.setView(target4, 16);
+                L.marker(target1,{title:'Room 1'}).addTo(map).bindPopup("Sensor1").openPopup();
+                L.marker(target2,{title:'Room 2'}).addTo(map).bindPopup("Sensor2");
+                L.marker(target3,{title:'Room 3'}).addTo(map).bindPopup("Sensor3");
+                L.marker(target4,{title:'Room 4'}).addTo(map).bindPopup("Sensor4");
+        //     }, 1000);
+        </script>
+    </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/switch/highlight.js"></script>
+    <script src="/js/switch/main.js"></script>
+    <script src="/js/guage/raphael-2.1.4.min.js"></script>
+    <script src="/js/guage/justgage-1.1.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+    <script src="/js/chart/Chart.js"></script>
+    <script src="/js/slider/freshslider.min.js"></script>
+    
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
+    <script>
+        $(document).ready(function () {
+            (function ($) {
+                $('#filter').keyup(function () {
+                    var rex = new RegExp($(this).val(), 'i');
+                    $('.searchable tr').hide();
+                    $('.searchable tr').filter(function () {
+                        return rex.test($(this).text());
+                    }).show();
+                })
+            }(jQuery));
+        });
+    </script>
+    <script>
+        var s2 = $("#unranged-value").freshslider({
+            step: 1,
+            value:50,
+            onchange:function(value){
+            }
+        });
+    </script>
+
+    <script>
+        function openTab(id) {
+            $('#tab1').hide();
+            $('#tab2').hide();
+            $('#tab3').hide();
+            $('#tab4').hide();
+            $('#tab5').hide();
+            $('#tab' + id).show();
+            $('.sidebar-nav li').removeClass('active');
+            $('#li-' + id).addClass('active');
+        }
+    </script>
+
+    <script>
+        init();
+        $('#login-submit').click(function() {
+            var username = $('#username').val();
+            var password = $('#password').val();
+            $.post( "/api/login", { user: username, pass: password })
+            .done(function( data ) {
+                if(data.status == 'success') {
+                    localStorage.setItem("isLogined", "true");
+                    localStorage.setItem("token", data.token);
+                    init();
+                }
+                else {
+                    console.log("Login fail! Try again!");
+                    $("#login-message").html("Login fail! Try again!");
+                }
+            });
+            
+        });
+
+        $('#logout-submit').click(function() {
+            localStorage.setItem("isLogined", "false");
+            localStorage.setItem("token", "false");
+            init();
+        });
+
+        function init() {
+            $("#login-message").html("");
+            token = localStorage.getItem("token");
+            let isLogined = localStorage.getItem("isLogined");
+            if(isLogined == 'true') {
+                $('#sidebar-wrapper').show();
+                $("#page-content-wrapper").show();
+                $("#header-user").show();
+                openTab(1);
+                $("#login-form").hide();
+            }
+            else {
+                $('#sidebar-wrapper').hide();
+                $("#page-content-wrapper").hide();
+                $("#header-user").hide();
+                $("#login-form").show();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

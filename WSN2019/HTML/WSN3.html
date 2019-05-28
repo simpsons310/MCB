@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> WSN2019 </title>
+    <link rel="Shortcut Icon" href="image/WSN.ico">
+    <meta http-equiv="content-type" content="tex/html">
+    <meta charset="UTF-8">
+    <meta rel="stylesheet" href="font/Roboto.woff2">
+    <meta rel="stylesheet" href="font/Lato.woff2">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+    	.slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #b1b1b1;
+        transition: .4s;
+      }
+      .slider:before {
+        position: absolute;
+        line-height: 90px;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 25px; 
+        font-weight: bold;
+        content: "OFF";
+        text-align: center;
+        height: 90px;
+        width: 90px;
+        left: 5px;
+        bottom: 5px;
+        background-color: white;
+        transition: .4s;
+      }
+      input:checked + .slider {
+        background-color: #18699F;
+      }
+      input:checked + .slider:before {
+        transform: translateX(89px);
+        content: "ON";
+      }
+      /* Slide button */
+      .slider_button {
+		  -webkit-appearance: none;
+		  width: 100%;
+		  height: 50px;
+		  outline: none;
+		}
+		.slider_button::-webkit-slider-thumb {
+		  -webkit-appearance: none;
+		  appearance: none;
+		  width: 50px;
+		  height: 50px;
+		  background-color: #18699F;
+		  border: 3px solid white;
+		}
+    </style>
+    <script>
+    	function rgb2hex(r,g,b){
+        return "#" + ("0" + r.toString(16)).slice(-2) + ("0" + g.toString(16)).slice(-2) + ("0" + b.toString(16)).slice(-2);
+      }
+      function controlSlide1(){
+      	var val = document.getElementById("slideButton1").value;
+      	var ratio = parseInt(255*val/100);
+      	var col = rgb2hex(ratio,ratio,75);
+      	document.getElementById("slide1").innerHTML = val;
+      	document.getElementById("slideButton1").style.backgroundColor = col;
+      }
+     function controlSlide2(){
+      	var val = document.getElementById("slideButton2").value;
+      	var ratio = parseInt(255*val/100);
+      	var col = rgb2hex(ratio,ratio,75);
+      	document.getElementById("slide2").innerHTML = val;
+      	document.getElementById("slideButton2").style.backgroundColor = col;
+     }
+     </script>
+  <body>
+  	 <div id ="taskbar" style = "position:fixed;top:0px;left:0px;height: 70px;width:100%; background-color: #18699F;">
+      <div style="line-height:70px;vertical-align:middle;color:white;text-align:center">
+        <span style="font-size:40px;font-weight:bold"> Nguyễn Hồng Giang </span>
+      </div>
+    </div>
+    <div style="height:80px; width:100%;border: 2px solid black;position:fixed;top:70px;left:0px">
+    	<div style="height:80px; width:49%;border-right:1px solid black;float:left;line-height:80px;vertical-align:middle;text-align:center;font-size:60px"> Bai 5 </div>
+    	<div style="height:80px; width:49%;float:left;line-height:80px;vertical-align:middle;text-align:center;font-size:60px"> Mang cam bien </div>
+    </div>
+    <div style="height:200px; width:100%;border: 2px solid black;border-top:none;position:fixed;top:150px;left:0px">
+    	<div style="width:49%;border-right:1px solid black;float:left;line-height:200px;vertical-align:middle;text-align:center;font-size:60px">
+    		<div style="display:flex;justify-content:center;align-items:center;height:200px">
+    			<div style = "margin:auto;border: 1px solid black;height:120px;line-height:120px;vertical-align:middle;text-align:center;width:200px;background-color: orange"> 25 </div>
+    			<div style = "margin:auto;border: 1px solid black;height:120px;line-height:120px;vertical-align:middle;text-align:center;width:200px;background-color: blue"> 16 </div>
+    		</div>
+    	</div>
+    	<div style="width:49%;float:left;line-height:200px;vertical-align:middle;text-align:center;font-size:60px"> 
+    		<div style="display:flex;justify-content:center;align-items:center;height:200px">
+    			<div style = "margin:auto;height:120px;line-height:120px;vertical-align:middle;text-align:center;width:200px;">
+    				<label class="switch" style="position:relative;display:inline-block;width:189px;height:100px">
+                      <input type="checkbox" style="opacity=0;height:0;witdh:0" onclick="controlLed()" id="led1_check">
+                      <span class="slider"></span>
+    			</div>
+    			<div style = "margin:auto;height:120px;line-height:120px;vertical-align:middle;text-align:center;width:200px;">
+    				<input type="range" min="0" max="100" value="0" class="slider_button" id="slideButton1" oninput="controlSlide1()" style="background-color:#00004B">
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  	 <div style="height:798px; width:100%;border: 2px solid black;border-top:none;position:fixed;top:350px;left:0px;">
+  	 	<div style= "margin: 5% 15%">
+  	 		<img src="image/line-chart.png" alt="Line-chart" style="width:1379px;height:400px;">
+  	 	</div>  	 		
+  	 </div>
+    
+  </body>
+</html> 
